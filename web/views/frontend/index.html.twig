@@ -1,0 +1,37 @@
+{% extends "ag_base/frontend.html.twig" %}
+
+{% block title %}Inicio - Uniformes Escolares Bodeven{% endblock %}
+
+{% block content %}
+    <h1 class="page-header"></h1>
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row-fluid">
+                <img class="span5" src="{{ app.asset_path }}/img/logo.JPG">
+                <div class="span7">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="col-md-4 thumbnail">
+            <h2>¿Quiénes somos?</h2>
+            <p align="justify">Empresa con 3 años en el mercado en venta de uniformes escolares, con Sede principal en la ciudad de Caracas, brindando y ofreciendo productos de calidad principalmente en: comercialización de uniformes...</p>
+            <p></p>
+            <p align="right"><a class="btn btn-primary" href="{{ path('about') }}" role="button">Ver más &raquo;</a></p>
+        </div>
+        <div class="col-md-4 thumbnail">
+            <h2>Misión</h2>
+            <p align="justify">Vestir al futuro de Venezuela con productos de excelente calidad, procurando en todo momento la satisfacción de nuestros clientes, el beneficio a la sociedad, honrando nuestros compromisos co los proveedores...</p>
+            <p></p>
+            <p align="right"><a class="btn btn-primary" href="{{ path('about') }}" role="button">Ver más &raquo;</a></p>
+        </div>
+        <div class="col-md-4 thumbnail">
+            <h2>Visión</h2>
+            <p align="justify">Ser la Empresa líder en posicionamiento y participación en ventas de Uniformes Escolares, comercializando los mejores productos que ofrezcan las mejores y más solidas compañías que los confeccionan en el mercado nacional...</p>
+            <p></p>
+            <p align="right"><a class="btn btn-primary" href="{{ path('about') }}" role="button">Ver más &raquo;</a></p>
+        </div>
+    </div>
+{% endblock %}

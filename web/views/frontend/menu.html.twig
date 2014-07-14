@@ -1,0 +1,87 @@
+<header class="header">
+    <a href="" class="logo">Bodeven</a>
+    <!-- Header Navbar: style can be found in header.less -->
+    <nav class="navbar navbar-static-top" role="navigation">
+
+        <!-- Sidebar toggle button-->
+        {#<a href="#" class="navbar-btn sidebar-toggle" data-toggle="collapse" data-target=".nav-collapse" role="button">#}
+            {#<span class="sr-only">Navegación</span>#}
+            {#<span class="icon-bar"></span>#}
+            {#<span class="icon-bar"></span>#}
+            {#<span class="icon-bar"></span>#}
+        {#</a>#}
+
+        <ul class="nav pull-left" ng-controller="MenuCtrl">
+            <li class="active">
+                <a href="{{ path('home') }}">Inicio</a>
+            </li>
+            <li>
+                <a href="{{ path('catalog') }}">Catálogo</a>
+            </li>
+            <li>
+                <a href="{{ path('about') }}">Nosotros</a>
+            </li>
+            <li>
+                <a href="{{ path('contact') }}">Contáctanos</a>
+            </li>
+            {#<li class="dropdown">#}
+                {#<a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Username <i class="caret"></i>#}
+
+                {#</a>#}
+                {#<ul class="dropdown-menu">#}
+                    {#<li>#}
+                        {#<a tabindex="-1" href="./admin">Administrar</a>#}
+                    {#</li>#}
+                    {#<li class="divider"></li>#}
+                    {#<li>#}
+                        {#<a tabindex="-1" ng-click="logout()" href="">Cerrar sesión</a>#}
+                    {#</li>#}
+                {#</ul>#}
+            {#</li>#}
+        </ul>
+    </nav>
+    {#<div class="navbar navbar-static-top">#}
+        {#<div class="navbar-inner">#}
+            {#<div class="container-fluid">#}
+                {#<a class="navbar-btn sidebar-toggle" data-toggle="collapse" data-target=".nav-collapse">#}
+                    {#<span class="icon-bar"></span>#}
+                    {#<span class="icon-bar"></span>#}
+                    {#<span class="icon-bar"></span>#}
+                {#</a>#}
+                {#<div class="nav-collapse collapse in">#}
+                    {#<ul class="nav pull-right" ng-controller="MenuCtrl">#}
+                        {#<li class="dropdown">#}
+                            {#<a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Username <i class="caret"></i>#}
+
+                            {#</a>#}
+                            {#<ul class="dropdown-menu">#}
+                                {#<li>#}
+                                    {#<a tabindex="-1" href="/admin">Administrar</a>#}
+                                {#</li>#}
+                                {#<li class="divider"></li>#}
+                                {#<li>#}
+                                    {#<a tabindex="-1" ng-click="logout()" href="">Cerrar sesión</a>#}
+                                {#</li>#}
+                            {#</ul>#}
+                        {#</li>#}
+                    {#</ul>#}
+                    {#<ul class="nav">#}
+                        {#<li class="active">#}
+                            {#<a href="/">Inicio</a>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<a href="/catalog">Catálogo</a>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<a href="/about">Nosotros</a>#}
+                        {#</li>#}
+                        {#<li>#}
+                            {#<a href="/contact">Contáctanos</a>#}
+                        {#</li>#}
+                    {#</ul>#}
+                {#</div>#}
+                {#<!--/.nav-collapse -->#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+</header>

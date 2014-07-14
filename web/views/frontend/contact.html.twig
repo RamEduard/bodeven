@@ -1,0 +1,78 @@
+{% extends "ag_base/frontend.html.twig" %}
+
+{% block title %}Contáctanos - Uniformes Escolares Bodeven{% endblock %}
+
+{% block content %}
+    <h2 class="page-header">Contáctanos</h2>
+    <div class="row">
+        <div class="col-12 col-md-6 col-sm-6 col-lg-6">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.0707254850277!2d-66.87700870000003!3d10.495090950000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a591fcd62e307%3A0x263994c5ace47e6f!2sSabana+Grande!5e0!3m2!1ses!2sve!4v1400704472409" frameborder="0" style="border:0;width:100%"></iframe>
+        </div>
+        <div class="col-12 col-md-6 col-sm-6 col-lg-6">
+            <h3>Envíanos tu mensaje</h3>
+            <form ng-controller="ContactCtrl" ng-submit="sendMail()">
+                <div class="control-group" style="margin: 0 auto;">
+                    <label class="control-label" for="name">Nombre:</label>
+                    <div class="controls">
+                        <input type="text"
+                               name="name"
+                               id="name"
+                               ng-model="name"
+                               title="Ingrese su nombre."
+                               style="width:20em"
+                               value=""
+                               autofocus
+                               required>
+                    </div>
+                </div>
+                <div class="control-group" style="margin: 0 auto;">
+                    <label class="control-label" for="subject">Asunto:</label>
+                    <div class="controls">
+                        <input type="text"
+                               name="subject"
+                               id="subject"
+                               ng-model="subject"
+                               title="Ingrese el motivo del mensaje."
+                               style="width:20em"
+                               value=""
+                               required>
+                    </div>
+                </div>
+                <div class="control-group" style="margin: 0 auto;">
+                    <label class="control-label" for="email">Correo:</label>
+                    <div class="controls">
+                        <input type="email"
+                               name="email"
+                               id="email"
+                               ng-model="email"
+                               title="Ingrese su correo electrónico."
+                               style="width:20em"
+                               value=""
+                               required>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="message">Mensaje:</label>
+                    <div class="controls">
+                        <textarea rows="3"
+                                  name="message"
+                                  id="message"
+                                  ng-model="message"
+                                  title="Ingrese su mensaje."
+                                  style="width:20em"
+                                  required></textarea>
+                    </div>
+                </div>
+                <div class="span1"> &nbsp;</div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="reset"
+                                class="btn btn-warning"><b>Borrar</b></button>
+                        <button type="submit" class="btn btn-primary"><b>Enviar</b></button>
+                    </div>
+                </div>
+            </form>
+            <div class="loading-form"></div>
+        </div>
+    </div>
+{% endblock %}
