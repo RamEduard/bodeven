@@ -1,5 +1,4 @@
 <?php
-
 # Autocargador del framework
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -43,16 +42,16 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
                 'invalidate_session' => false
             ),
             'users' => $app->share(function($app) {
-                return new Bodeven\UserProvider($app['db']);
-            }),
+                    return new Bodeven\UserProvider($app['db']);
+                }),
         )
     ),
     'security.access_rules' => array(
         array('^/login$', 'IS_AUTHENTICATED_ANONYMOUSLY'),
-        array('^/admin/perfil', array('ROLE_Programador', 'ROLE_SUPER_ADMIN')),
-        array('^/admin/usuario', array('ROLE_Programador', 'ROLE_SUPER_ADMIN')),
-        array('^/admin', array('ROLE_Programador', 'ROLE_ADMIN')),
-        array('^/admin', 'ROLE_USER')
+        array('^/admin/perfil', 'ROLE_Programador'),
+        array('^/admin/usuario', array('ROLE_Programador', 'ROLE_Administrador')),
+        array('^/admin', array('ROLE_Programador', 'ROLE_Administrador')),
+        array('^/admin', 'ROLE_Usuario')
     )
 ));
 # Proveedor de doctrine para base de datos
@@ -69,7 +68,14 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
     )
 ));
 
-$app['asset_path'] = 'http://localhost/bodeven2/web/resources';
+$filename = __DIR__.preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
+if (php_sapi_name() === 'cli-server' && is_file($filename)) {
+    return false;
+}
+
+$app['asset_path'] = "http://$_SERVER[SERVER_NAME]:$_SERVER[SERVER_PORT]/resources";
+$app['upload_path'] = "http://$_SERVER[SERVER_NAME]:$_SERVER[SERVER_PORT]/resources/uploads";
+$app['upload_dir'] = __DIR__ . "/resources/uploads/";
 $app['debug'] = true;
 
 require_once __DIR__ . '/routes/backend/base.php';
