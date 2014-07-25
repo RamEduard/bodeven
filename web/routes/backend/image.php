@@ -2,9 +2,9 @@
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\HttpFoundation\Response;
-use Precursor\UploadImage;
+use Bodeven\UploadImage;
 
-$app->match('/admin/image', function () use ($app) {
+$app->match('/admin/imagen', function () use ($app) {
     
 	$table_columns = array(
 		'id', 
@@ -15,7 +15,7 @@ $app->match('/admin/image', function () use ($app) {
     $primary_key = "id";
 	$rows = array();
 
-    $find_sql = "SELECT * FROM `image`";
+    $find_sql = "SELECT * FROM `imagen`";
     $rows_sql = $app['db']->fetchAll($find_sql, array());
 
     foreach($rows_sql as $row_key => $row_sql){
@@ -24,16 +24,41 @@ $app->match('/admin/image', function () use ($app) {
     	}
     }
 
-    return $app['twig']->render('backend/image/list.html.twig', array(
+    return $app['twig']->render('backend/imagen/list.html.twig', array(
     	"table_columns" => $table_columns,
         "primary_key" => $primary_key,
     	"rows" => $rows
     ));
         
 })
-->bind('image_list');
+->bind('imagen_list');
 
-$app->match('/admin/image/create', function () use ($app) {
+$app->match('/admin/imagenJson', function() use($app) {
+
+    $table_columns = array(
+        'id',
+        'nombre',
+        'link',
+    );
+
+    $find_sql = "SELECT * FROM `imagen`";
+    $rows_sql = $app['db']->fetchAll($find_sql, array());
+
+    foreach($rows_sql as $row_key => $row_sql){
+        for($i = 0; $i < count($table_columns); $i++){
+            $rows[$row_key][$table_columns[$i]] = $row_sql[$table_columns[$i]];
+        }
+    }
+
+    return $app['twig']->render('backend/imagen/listJson.html.twig', array(
+        'images' => $rows
+    ));
+
+})
+->method('GET')
+->bind('imagen_list_json');
+
+$app->match('/admin/imagen/create', function () use ($app) {
 
     if("POST" == $app['request']->getMethod()){
 
@@ -44,31 +69,31 @@ $app->match('/admin/image/create', function () use ($app) {
 
         $vars = $result['vars'];
 
-        $nombreImagen = $vars['image'];
+        $nombreImagen = $vars['imagen'];
         $linkImagen = "$app[upload_path]/$vars[folder]/$vars[imagen]";
 
-        $update_query = "INSERT INTO `image` (`nombre`, `link`, `creado`) VALUES (?, ?, NOW())";
+        $update_query = "INSERT INTO `imagen` (`nombre`, `link`, `creado`) VALUES (?, ?, NOW())";
         $app['db']->executeUpdate($update_query, array($nombreImagen, $linkImagen));
 
         die(json_encode(array('status' => $result['status'])));
 
     }
 
-    return $app['twig']->render('backend/image/create.html.twig', array());
+    return $app['twig']->render('backend/imagen/create.html.twig', array());
         
 })
-->bind('image_create');
+->bind('imagen_create');
 
-$app->match('/admin/image/edit/{id}', function ($id) use ($app) {
+$app->match('/admin/imagen/edit/{id}', function ($id) use ($app) {
 
-    $find_sql = "SELECT * FROM `image` WHERE `id` = ?";
+    $find_sql = "SELECT * FROM `imagen` WHERE `id` = ?";
     $row_sql = $app['db']->fetchAssoc($find_sql, array($id));
 
     if(!$row_sql){
         $app['session']->getFlashBag()->add(
             'danger',
             array(
-                'message' => '¡image no encontrado!',
+                'message' => '¡imagen no encontrado!',
             )
         );        
         return $app->redirect($app['url_generator']->generate('imagen_list'));
@@ -93,7 +118,7 @@ $app->match('/admin/image/edit/{id}', function ($id) use ($app) {
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "UPDATE `image` SET `nombre` = ?, `link` = ? WHERE `id` = ?";
+            $update_query = "UPDATE `imagen` SET `nombre` = ?, `link` = ? WHERE `id` = ?";
             $app['db']->executeUpdate($update_query, array($data['nombre'], $data['link'], $id));
 
             $app['session']->getFlashBag()->add(
@@ -107,18 +132,18 @@ $app->match('/admin/image/edit/{id}', function ($id) use ($app) {
         }
     }
 
-    return $app['twig']->render('backend/image/edit.html.twig', array(
+    return $app['twig']->render('backend/imagen/edit.html.twig', array(
         "form" => $form->createView(),
-        "image" => $row_sql,
+        "imagen" => $row_sql,
         "id" => $id
     ));
         
 })
-->bind('image_edit');
+->bind('imagen_edit');
 
-$app->match('/admin/image/delete/{id}', function ($id) use ($app) {
+$app->match('/admin/imagen/delete/{id}', function ($id) use ($app) {
 
-    $find_sql = "SELECT * FROM `image` WHERE `id` = ?";
+    $find_sql = "SELECT * FROM `imagen` WHERE `id` = ?";
     $row_sql = $app['db']->fetchAssoc($find_sql, array($id));
 
     if($row_sql){
@@ -129,7 +154,7 @@ $app->match('/admin/image/delete/{id}', function ($id) use ($app) {
 
         // Eliminar los archivos
 
-        $delete_query = "DELETE FROM `image` WHERE `id` = ?";
+        $delete_query = "DELETE FROM `imagen` WHERE `id` = ?";
         $app['db']->executeUpdate($delete_query, array($id));
 
         $app['session']->getFlashBag()->add(
@@ -151,4 +176,4 @@ $app->match('/admin/image/delete/{id}', function ($id) use ($app) {
     return $app->redirect($app['url_generator']->generate('imagen_list'));
 
 })
-->bind('image_delete');
+->bind('imagen_delete');

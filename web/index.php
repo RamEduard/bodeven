@@ -3,7 +3,8 @@
 # Autocargador del framework
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use Silex\Application;
+use Silex\Application,
+    Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder;
 
 # Objeto de la aplicacion Silex
 $app = new Application();
@@ -49,11 +50,14 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
     ),
     'security.access_rules' => array(
         array('^/login$', 'IS_AUTHENTICATED_ANONYMOUSLY'),
-        array('^/admin/perfil', array('ROLE_Programador', 'ROLE_SUPER_ADMIN')),
-        array('^/admin/usuario', array('ROLE_Programador', 'ROLE_SUPER_ADMIN')),
-        array('^/admin', array('ROLE_Programador', 'ROLE_ADMIN')),
-        array('^/admin', 'ROLE_USER')
-    )
+        array('^/admin/perfils', 'ROLE_Programador'),
+        array('^/admin/users', array('ROLE_Programador', 'ROLE_Administrador')),
+        array('^/admin', array('ROLE_Programador', 'ROLE_Administrador')),
+        array('^/admin', 'ROLE_Usuario')
+    ),
+    'security.encoder.digest' => $app->share(function($app) {
+        return new MessageDigestPasswordEncoder('sha512');
+    })
 ));
 # Proveedor de doctrine para base de datos
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
@@ -61,17 +65,24 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
         'db' => array(
             'driver' => 'pdo_mysql',
             'dbname' => 'tania_serrano',
-            'host' => '127.0.0.1',
+            'host' => 'localhost',
             'user' => 'root',
             'password' => '',
             'charset' => 'utf8',
         ),
     )
 ));
+#Provedor de swiftmailer
+$app->register(new Silex\Provider\SwiftmailerServiceProvider());
+#Proveedor de carrito de compras
+$app->register(new Bodeven\SilexProvider\CartServiceProvider());
 
 $app['asset_path'] = 'http://localhost/bodeven2/web/resources';
+$app['upload_path'] = 'http://localhost/bodeven2/web/resources/uploads';
+$app['upload_dir'] = __DIR__ . "/resources/uploads/";
 $app['debug'] = true;
 
+require_once __DIR__ . '/routes/errors/base.php';
 require_once __DIR__ . '/routes/backend/base.php';
 require_once __DIR__ . '/routes/frontend/base.php';
 

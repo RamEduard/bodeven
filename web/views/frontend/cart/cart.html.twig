@@ -1,0 +1,94 @@
+{% extends 'ag_base/frontend.html.twig' %}
+
+{% block title %}Pedido - Uniformes Escolares Bodeven{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+    <!-- page script -->
+    <script type="text/javascript">
+        function confirm_delete(){
+            if(!confirm("¿Realmente desea eliminar del pedido?")) {
+                return false;
+            }
+        }
+    </script>
+{% endblock %}
+
+{% block content %}
+    <h1 class="page-header">Pedido</h1>
+    <div class="row">
+        {% if products == null %}
+            <div class="col-lg-12">
+                <div class="jumbotron">
+                    <h4>No hay productos en el pedido</h4>
+                </div>
+            </div>
+        {% else %}
+            <div class="col-md-6 col-lg-6">
+                <h4>Items</h4>
+                <hr>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Cant.</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product in products %}
+                            <tr>
+                                <td style="width: 30px">
+                                    {{ product.id }}
+                                </td>
+                                <td style="width: 50px">
+                                    <img src="{{ product.image }}" class="img-responsive" style="width: 50px">
+                                </td>
+                                <td>
+                                    {{ product.name }}
+                                </td>
+                                <td style="width: 30px">
+                                    {{ product.count }}
+                                </td>
+                                <td style="width: 130px">
+                                    {% if product.count > 1 %}
+                                        <form action="{{ path('product_minus') }}" method="post" style="width: 34px; display: inline-block">
+                                            <input type="hidden" name="product_id" value="{{ product.id }}">
+                                            <input type="hidden" name="color" value="{{ product.color }}">
+                                            <button type="submit" class="btn btn-default" style="width: 34px; display: inline-block">-</button>
+                                        </form>
+                                    {% endif %}
+                                    <form action="{{ path('product_plus') }}" method="post" style="width: 34px; display: inline-block">
+                                        <input type="hidden" name="product_id" value="{{ product.id }}">
+                                        <input type="hidden" name="color" value="{{ product.color }}">
+                                        <button type="submit" class="btn btn-default" style="width: 34px">+</button>
+                                    </form>
+                                    <a href="{{ path('product_remove', { productId: product.id }) }}"
+                                       onclick='return confirm_delete();' class="btn btn-default" style="width: 34px">x</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Cant.</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <h4>Enviar pedido</h4>
+                <hr>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

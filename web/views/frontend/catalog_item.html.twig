@@ -2,15 +2,6 @@
 
 {% block title %}{{ product.name }} - Uniformes Escolares Bodeven{% endblock %}
 
-{% block extra_stylesheet %}
-    <style>
-        a.list-group-item {text-decoration: none;color: #555;}a.list-group-item:hover, a.list-group-item:focus {background-color: #f5f5f5;}.list-group-item:first-child {border-top-left-radius: 4px;border-top-right-radius: 4px;}.list-group-item:last-child {border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;}.list-group-item {position: relative;display: block;padding: 10px 15px;margin-bottom: -1px;background-color: #fff;border: 1px solid #ddd;}.ratings {color: #d17581;padding-left: 10px;padding-right: 10px;}
-    </style>
-    <style type="text/css">
-        .thumbnail.col-12,.thumbnail.col-md-12,.thumbnail.col-xs-12,.thumbnail.col-lg-12{min-height:20em;max-height:30em; margin-bottom: 10px; cursor: pointer}.thumbnail.col-12,.thumbnail.col-md-12,.thumbnail.col-xs-12,.thumbnail.col-lg-12:hover, .thumbnail.col-12,.thumbnail.col-md-12,.thumbnail.col-xs-12,.thumbnail.col-lg-12:focus{border-color: #006dcc; text-decoration: none}
-    </style>
-{% endblock %}
-
 {% block content %}
     <h1 class="page-header"></h1>
     <div class="row">
@@ -24,23 +15,24 @@
             <div class="row-fluid">
                 <img class="col-12 col-md-6 col-xs-6 col-lg-6" src="{{ product.image }}" style="margin-top:1em" alt="Sin imagen"/>
                 <div class="col-12 col-md-6 col-xs-6 col-lg-6">
-                    <h2>{{ product.name }} <!--<small>BsF. Price</small>--></h2>
+                    <h2>{{ product.name }} <small>BsF. {{ product.price }}</small></h2>
                     <p><b>Tallas:</b> {{ product.sizes }}</p>
-                    <form id="order" method="GET">
+                    <form id="order" method="POST" action="{{ path('addToCart') }}">
+                        {% if product.colors != null %}
                         <p><b>Colores:</b><br>
                             {% for color in product.colors %}
-                                <div title="{{ color }}"
-                                     style="background-color:{{ color }};width:3em;height:1.5em;border:1px solid #eee;display:inline-block;margin-right:1em;margin-left: 1.3em;">
-                                    <input type="radio" name="color" id="color" value="{{ color }}" style="margin-left: -1.3em;margin-top: -1px">
-                                </div>
+                                <label for="color-{{ color.id }}" title="{{ color.name }}"
+                                     style="background-color:{{ color.color_hex }};width:3em;height:1.5em;border:1px solid #eee;display:inline-block;margin-right:1em;margin-left: 1.3em;">
+                                    <input type="radio" name="color" id="color-{{ color.id }}" value="{{ color.color_hex }}" style="margin-left: -1.3em;margin-top: -1px;">
+                                </label>
                             {% endfor %}
                         </p>
-
-                        <input type="hidden" id="product_id" value="{{ product.id }}">
+                        {% endif %}
+                        <input type="hidden" name="product_id" id="product_id" value="{{ product.id }}">
                         <button type="button" id="minus" class="btn btn-default">-</button>
-                        <input type="number" id="item" value=1 style="width:4em;margin-top:11.3px" required>
+                        <input type="number" name="count" id="item" value=1 style="width:4em;margin-top:11.3px" required>
                         <button type="button" id="plus" class="btn btn-default">+</button>
-                        <button type="submit" class="btn btn-success">Hacer pedido</button>
+                        <button type="submit" class="btn btn-success">Añadir a mi pedido</button>
                     </form>
                 </div>
             </div>
@@ -53,83 +45,91 @@
             <div class="col-12 col-md-10 col-xs-10 col-lg-10">
                 <p class="lead" style="margin-top: 10px; margin-bottom: -10px">Productos relacionados</p>
                 <hr>
-                {% for related_product in related_products %}
-                    <a class="thumbnail col-12 col-md-3 col-xs-4 col-lg-2"
-                       href="{{ path('catalog_item', { id: related_product.id }) }}"
-                       style="margin-left:10px">
-                        <img src="{{ related_product.image }}" alt="Sin imagen" style="height:100px">
-                        <div class="caption">
-                            <h4 class="pull-right">BsF. {{ related_product.price }}</h4>
-                            <h4>{{ related_product.name }}</h4>
-                            <p><b>Categoría: </b>{{ related_product.category }}</p>
-                            <p><b>Proveedor: </b>{{ related_product.provider }}</p>
-                        </div>
-                        <!--
-                        <div class="ratings">
-                            <p class="pull-right">15 reviews</p>
-                            <p>
-                                <span class="icon-star"></span>
-                                <span class="icon-star"></span>
-                                <span class="icon-star"></span>
-                                <span class="icon-star"></span>
-                                <span class="icon-star"></span>
-                            </p>
-                        </div>-->
-                    </a>
-                {% endfor %}
+                {% if related_products != null %}
+                    {% for related_product in related_products %}
+                        <a class="thumbnail col-12 col-md-3 col-xs-4 col-lg-3"
+                           href="{{ path('catalog_item', { id: related_product.id }) }}"
+                           style="margin-left:10px">
+                            <img src="{{ related_product.image }}" alt="Sin imagen" style="height:100px">
+                            <div class="caption">
+                                <h4 class="pull-right">BsF. {{ related_product.price }}</h4>
+                                <h4>{{ related_product.name }}</h4>
+                                <p><b>Categoría: </b>{{ related_product.category }}</p>
+                                <p><b>Proveedor: </b>{{ related_product.provider }}</p>
+                            </div>
+                            <!--
+                            <div class="ratings">
+                                <p class="pull-right">15 reviews</p>
+                                <p>
+                                    <span class="icon-star"></span>
+                                    <span class="icon-star"></span>
+                                    <span class="icon-star"></span>
+                                    <span class="icon-star"></span>
+                                    <span class="icon-star"></span>
+                                </p>
+                            </div>-->
+                        </a>
+                    {% endfor %}
+                {% else %}
+                    <p>No hay productos relacionados</p>
+                {% endif %}
             </div>
         </div>
     </div>
 {% endblock %}
+{% block extra_stylesheet %}
+    <style>
+        a.list-group-item {text-decoration: none;color: #555;}a.list-group-item:hover, a.list-group-item:focus {background-color: #f5f5f5;}.list-group-item:first-child {border-top-left-radius: 4px;border-top-right-radius: 4px;}.list-group-item:last-child {border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;}.list-group-item {position: relative;display: block;padding: 10px 15px;margin-bottom: -1px;background-color: #fff;border: 1px solid #ddd;}.ratings {color: #d17581;padding-left: 10px;padding-right: 10px;}
+    </style>
+    <style type="text/css">
+        .thumbnail.col-12,.thumbnail.col-md-12,.thumbnail.col-xs-12,.thumbnail.col-lg-12{min-height:20em;max-height:30em; margin-bottom: 10px; cursor: pointer}.thumbnail.col-12,.thumbnail.col-md-12,.thumbnail.col-xs-12,.thumbnail.col-lg-12:hover, .thumbnail.col-12,.thumbnail.col-md-12,.thumbnail.col-xs-12,.thumbnail.col-lg-12:focus{border-color: #006dcc; text-decoration: none}
+    </style>
+{% endblock %}
 {% block javascripts %}
     {{ parent() }}
-    <script type="text/javascript">
-        $(function() {
-            var item = $("#item").val();
-            if (item === "1") {
-                item = 1;
+    <script>
+
+        function itemIsValid(valor) {
+            if (isNaN(valor)) {
+                parseInt(valor);
             }
-            $("input").each(function() {
-                $(this).tooltip({placement: 'bottom'});
+            if (valor <= 0) {
+                orderSubmitDisable();
+            }
+            if (valor >= 1) {
+                orderSubmitEnable();
+            }
+        }
+
+        function orderSubmitDisable() {
+            $('#order button[type="submit"]').addClass('disabled');
+        }
+
+        function orderSubmitEnable() {
+            if ($('#order button[type="submit"]').hasClass('disabled')) {
+                $('#order button[type="submit"]').removeClass('disabled');
+            }
+        }
+    </script>
+    <script>
+        $(function() {
+
+            $("#order #item").change(function() {
+                itemIsValid($(this).val());
             });
-            $("select").each(function() {
-                $(this).tooltip({placement: 'right'});
+
+            $('#order #minus').click(function() {
+                valor = parseInt($("#item").val());
+                valor--;
+                itemIsValid(valor);
+                $("#item").val(valor);
             });
-            $("#minus").click(function() {
-                item = item - 1;
-                $("#item").val(item);
-            });
-            $("#plus").click(function() {
-                item = item + 1;
-                $("#item").val(item);
-            });
-            $("#order").submit(function(event) {
-                $.ajax({
-                    url: ".././addToCart",
-                    data: {
-                        product_id: $("#product_id").val(),
-                        items: $("#item").val()
-                    },
-                    beforeSend: function() {
-                        $("#cargando_modal").modal("show");
-                    },
-                    error: function(object, err, otherobj) {
-                        $("#cargando_modal").modal("hide");
-                        $.jGrowl("Ocurrió un error al ejecutar la acción!\nError: " + otherobj);
-                    },
-                    processData: true,
-                    success: function(data) {
-                        data = JSON.parse(data);
-                        $("#cargando_modal").modal("hide");
-                        if (data.result === "Exitoso") {
-                            $.jGrowl("El pedido fue realizado con éxito!");
-                        } else {
-                            $.jGrowl("Acción no exitosa!");
-                        }
-                    },
-                    type: "POST"
-                });
-                event.preventDefault();
+
+            $('#order #plus').click(function() {
+                valor = parseInt($("#item").val());
+                valor++;
+                itemIsValid(valor);
+                $("#item").val(valor);
             });
         });
     </script>

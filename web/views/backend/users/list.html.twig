@@ -14,7 +14,7 @@
         });
 
         function confirm_delete(){
-            if(!confirm("¿Realmente desea eliminar? Esta acción no puede deshacer.")) { 
+            if(!confirm("¿Realmente desea eliminar? ¡Esta acción no puede deshacer!")) {
                 return false;
             }
         }
@@ -33,7 +33,7 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Users list
+                    Usuarios
                 </h1>
             </section>
 
@@ -55,29 +55,35 @@
                                 <table id="users_list" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            {% for table_column in table_columns %}
-                                            <th>{{ table_column }}</th>
-                                            {% endfor %}
-                                            <th>Actions</th>
+                                            <th>Perfil</th>
+                                            <th>Estatus</th>
+                                            <th>Nombre</th>
+                                            <th>Usuario</th>
+                                            <th>Correo</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {% for row in rows %}
                                             <tr>
-                                                {% for table_column in table_columns %}
-                                                    <td>{{ row[table_column] }}</td>
-                                                {% endfor %}
-                                                <td><a href="{{ path('users_edit', { id: row[primary_key] }) }}" class="btn btn-primary btn-xs">Edit</a> <a href="{{ path('users_delete', { id: row[primary_key] }) }}" onclick='return confirm_delete();' class="btn btn-danger btn-xs">Delete</a></td>
+                                                <td>{{ row.perfil }}</td>
+                                                <td>{{ row.estatus }}</td>
+                                                <td>{{ row.name }}</td>
+                                                <td>{{ row.username }}</td>
+                                                <td>{{ row.email }}</td>
+                                                <td><a href="{{ path('users_edit', { id: row[primary_key] }) }}" class="btn btn-primary btn-xs">Editar</a> <a href="{{ path('users_delete', { id: row[primary_key] }) }}" onclick='return confirm_delete();' class="btn btn-danger btn-xs">Eliminar</a></td>
                                             </tr>
                                         {% endfor %}                                        
 
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            {% for table_column in table_columns %}
-                                            <th>{{ table_column }}</th>
-                                            {% endfor %}
-                                            <th>Actions</th>
+                                            <th>Perfil</th>
+                                            <th>Estatus</th>
+                                            <th>Nombre</th>
+                                            <th>Usuario</th>
+                                            <th>Correo</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </tfoot>
                                 </table>

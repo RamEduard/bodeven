@@ -2,12 +2,11 @@
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-$app->match('/perfils', function () use ($app) {
+$app->match('/admin/perfils', function () use ($app) {
     
 	$table_columns = array(
 		'id', 
-		'name', 
-
+		'name',
     );
 
     $primary_key = "id";
@@ -18,10 +17,7 @@ $app->match('/perfils', function () use ($app) {
 
     foreach($rows_sql as $row_key => $row_sql){
     	for($i = 0; $i < count($table_columns); $i++){
-
-		$rows[$row_key][$table_columns[$i]] = $row_sql[$table_columns[$i]];
-
-
+		    $rows[$row_key][$table_columns[$i]] = $row_sql[$table_columns[$i]];
     	}
     }
 
@@ -36,7 +32,7 @@ $app->match('/perfils', function () use ($app) {
 
 
 
-$app->match('/perfils/create', function () use ($app) {
+$app->match('/admin/perfils/create', function () use ($app) {
     
     $initial_data = array(
 		'name' => '', 
@@ -66,7 +62,7 @@ $app->match('/perfils/create', function () use ($app) {
             $app['session']->getFlashBag()->add(
                 'success',
                 array(
-                    'message' => 'perfils created!',
+                    'message' => '¡Perfil creado!',
                 )
             );
             return $app->redirect($app['url_generator']->generate('perfils_list'));
@@ -81,9 +77,7 @@ $app->match('/perfils/create', function () use ($app) {
 })
 ->bind('perfils_create');
 
-
-
-$app->match('/perfils/edit/{id}', function ($id) use ($app) {
+$app->match('/admin/perfils/edit/{id}', function ($id) use ($app) {
 
     $find_sql = "SELECT * FROM `perfils` WHERE `id` = ?";
     $row_sql = $app['db']->fetchAssoc($find_sql, array($id));
@@ -92,7 +86,7 @@ $app->match('/perfils/edit/{id}', function ($id) use ($app) {
         $app['session']->getFlashBag()->add(
             'danger',
             array(
-                'message' => 'Row not found!',
+                'message' => '¡Perfil no encontrado!',
             )
         );        
         return $app->redirect($app['url_generator']->generate('perfils_list'));
@@ -107,9 +101,7 @@ $app->match('/perfils/edit/{id}', function ($id) use ($app) {
 
     $form = $app['form.factory']->createBuilder('form', $initial_data);
 
-
 	$form = $form->add('name', 'text', array('required' => true));
-
 
     $form = $form->getForm();
 
@@ -127,7 +119,7 @@ $app->match('/perfils/edit/{id}', function ($id) use ($app) {
             $app['session']->getFlashBag()->add(
                 'success',
                 array(
-                    'message' => 'perfils edited!',
+                    'message' => '¡Perfil editado!',
                 )
             );
             return $app->redirect($app['url_generator']->generate('perfils_edit', array("id" => $id)));
@@ -143,9 +135,7 @@ $app->match('/perfils/edit/{id}', function ($id) use ($app) {
 })
 ->bind('perfils_edit');
 
-
-
-$app->match('/perfils/delete/{id}', function ($id) use ($app) {
+$app->match('/admin/perfils/delete/{id}', function ($id) use ($app) {
 
     $find_sql = "SELECT * FROM `perfils` WHERE `id` = ?";
     $row_sql = $app['db']->fetchAssoc($find_sql, array($id));
@@ -157,7 +147,7 @@ $app->match('/perfils/delete/{id}', function ($id) use ($app) {
         $app['session']->getFlashBag()->add(
             'success',
             array(
-                'message' => 'perfils deleted!',
+                'message' => '¡Perfil eliminado!',
             )
         );
     }
@@ -165,7 +155,7 @@ $app->match('/perfils/delete/{id}', function ($id) use ($app) {
         $app['session']->getFlashBag()->add(
             'danger',
             array(
-                'message' => 'Row not found!',
+                'message' => '¡Perfil no encontrado!',
             )
         );  
     }
@@ -174,9 +164,3 @@ $app->match('/perfils/delete/{id}', function ($id) use ($app) {
 
 })
 ->bind('perfils_delete');
-
-
-
-
-
-

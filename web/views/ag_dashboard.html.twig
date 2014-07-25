@@ -34,8 +34,8 @@
                                         <div class="light-well">
                                             <h4>Productos</h4>
                                             <div class="data">
-                                                <a href="/admin/projects">
-                                                    <h1>3</h1>
+                                                <a href="{{ path('products_list') }}">
+                                                    <h1>{{ numProd }}</h1>
                                                 </a><hr>
                                                 <a class="btn btn-success" href="{{ path('products_create') }}">Nuevo producto</a>
                                             </div>
@@ -45,8 +45,8 @@
                                         <div class="light-well">
                                             <h4>Proveedores</h4>
                                             <div class="data">
-                                                <a href="/admin/projects">
-                                                    <h1>3</h1>
+                                                <a href="{{ path('providers_list') }}">
+                                                    <h1>{{ numProv }}</h1>
                                                 </a><hr>
                                                 <a class="btn btn-success" href="{{ path('providers_create') }}">Nuevo proveedor</a>
                                             </div>
@@ -56,8 +56,8 @@
                                         <div class="light-well">
                                             <h4>Categorías</h4>
                                             <div class="data">
-                                                <a href="/admin/projects">
-                                                    <h1>3</h1>
+                                                <a href="{{ path('categories_list') }}">
+                                                    <h1>{{ numCat }}</h1>
                                                 </a><hr>
                                                 <a class="btn btn-success" href="{{ path('categories_create') }}">Nuevo categoría</a>
                                             </div>

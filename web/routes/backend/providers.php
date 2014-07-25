@@ -2,14 +2,11 @@
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-$app->match('/providers', function () use ($app) {
+$app->match('/admin/providers', function () use ($app) {
     
 	$table_columns = array(
 		'id', 
 		'name', 
-		'created', 
-		'updated', 
-
     );
 
     $primary_key = "id";
@@ -18,12 +15,9 @@ $app->match('/providers', function () use ($app) {
     $find_sql = "SELECT * FROM `providers`";
     $rows_sql = $app['db']->fetchAll($find_sql, array());
 
-    foreach($rows_sql as $row_key => $row_sql){
-    	for($i = 0; $i < count($table_columns); $i++){
-
-		$rows[$row_key][$table_columns[$i]] = $row_sql[$table_columns[$i]];
-
-
+    foreach($rows_sql as $row_key => $row_sql) {
+    	for($i = 0; $i < count($table_columns); $i++) {
+		    $rows[$row_key][$table_columns[$i]] = $row_sql[$table_columns[$i]];
     	}
     }
 
@@ -36,25 +30,15 @@ $app->match('/providers', function () use ($app) {
 })
 ->bind('providers_list');
 
-
-
-$app->match('/providers/create', function () use ($app) {
+$app->match('/admin/providers/create', function () use ($app) {
     
     $initial_data = array(
-		'name' => '', 
-		'created' => '', 
-		'updated' => '', 
-
+		'name' => '',
     );
 
     $form = $app['form.factory']->createBuilder('form', $initial_data);
 
-
-
 	$form = $form->add('name', 'text', array('required' => true));
-	$form = $form->add('created', 'text', array('required' => true));
-	$form = $form->add('updated', 'text', array('required' => true));
-
 
     $form = $form->getForm();
 
@@ -65,14 +49,14 @@ $app->match('/providers/create', function () use ($app) {
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "INSERT INTO `providers` (`name`, `created`, `updated`) VALUES (?, ?, ?)";
-            $app['db']->executeUpdate($update_query, array($data['name'], $data['created'], $data['updated']));            
+            $update_query = "INSERT INTO `providers` (`name`, `created`) VALUES (?, NOW())";
+            $app['db']->executeUpdate($update_query, array($data['name']));
 
 
             $app['session']->getFlashBag()->add(
                 'success',
                 array(
-                    'message' => 'providers created!',
+                    'message' => '¡Proveedor creado!',
                 )
             );
             return $app->redirect($app['url_generator']->generate('providers_list'));
@@ -87,9 +71,7 @@ $app->match('/providers/create', function () use ($app) {
 })
 ->bind('providers_create');
 
-
-
-$app->match('/providers/edit/{id}', function ($id) use ($app) {
+$app->match('/admin/providers/edit/{id}', function ($id) use ($app) {
 
     $find_sql = "SELECT * FROM `providers` WHERE `id` = ?";
     $row_sql = $app['db']->fetchAssoc($find_sql, array($id));
@@ -98,7 +80,7 @@ $app->match('/providers/edit/{id}', function ($id) use ($app) {
         $app['session']->getFlashBag()->add(
             'danger',
             array(
-                'message' => 'Row not found!',
+                'message' => '¡Proveedor no encontrado!',
             )
         );        
         return $app->redirect($app['url_generator']->generate('providers_list'));
@@ -106,10 +88,7 @@ $app->match('/providers/edit/{id}', function ($id) use ($app) {
 
     
     $initial_data = array(
-		'name' => $row_sql['name'], 
-		'created' => $row_sql['created'], 
-		'updated' => $row_sql['updated'], 
-
+		'name' => $row_sql['name'],
     );
 
 
@@ -117,9 +96,6 @@ $app->match('/providers/edit/{id}', function ($id) use ($app) {
 
 
 	$form = $form->add('name', 'text', array('required' => true));
-	$form = $form->add('created', 'text', array('required' => true));
-	$form = $form->add('updated', 'text', array('required' => true));
-
 
     $form = $form->getForm();
 
@@ -130,14 +106,14 @@ $app->match('/providers/edit/{id}', function ($id) use ($app) {
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "UPDATE `providers` SET `name` = ?, `created` = ?, `updated` = ? WHERE `id` = ?";
-            $app['db']->executeUpdate($update_query, array($data['name'], $data['created'], $data['updated'], $id));            
+            $update_query = "UPDATE `providers` SET `name` = ? WHERE `id` = ?";
+            $app['db']->executeUpdate($update_query, array($data['name'], $id));
 
 
             $app['session']->getFlashBag()->add(
                 'success',
                 array(
-                    'message' => 'providers edited!',
+                    'message' => '¡Proveedor editado con éxito!',
                 )
             );
             return $app->redirect($app['url_generator']->generate('providers_edit', array("id" => $id)));
@@ -155,7 +131,7 @@ $app->match('/providers/edit/{id}', function ($id) use ($app) {
 
 
 
-$app->match('/providers/delete/{id}', function ($id) use ($app) {
+$app->match('/admin/providers/delete/{id}', function ($id) use ($app) {
 
     $find_sql = "SELECT * FROM `providers` WHERE `id` = ?";
     $row_sql = $app['db']->fetchAssoc($find_sql, array($id));

@@ -1,3 +1,4 @@
+
 {% extends "ag_base/frontend.html.twig" %}
 
 {% block title %}Catálogo - Uniformes Escolares Bodeven{% endblock %}
@@ -42,12 +43,13 @@
             </div>
             <p class="lead">Proveedores</p>
             <div class="list-group">
-                <select class="form-control" title="Seleccionar proveedor">
-                    <option value="" selected>Seleccione</option>
-                    {% for provider in providers %}
-                        <option value="{{provider.id}}">{{provider.name}}</option>
-                    {% endfor %}
-                </select>
+            	<ul>
+            		{% for provider in providers %}
+                    	<li>
+                    		<a href="{{provider.id}}">{{provider.name}}</a>
+                    	</li>
+                	{% endfor %}
+            	</ul>
             </div>
         </div>
         <p></p>
@@ -82,7 +84,7 @@
             </div>-->
             <div class="row">
                 {% for product in products %}
-                    <div ng-repeat="product in products | filter:q | filter:c | filter:p" class="col-12 col-xs-6 col-md-6 col-lg-3">
+                    <div class="col-12 col-xs-4 col-md-4 col-lg-4">
                         <a class="thumbnail" href="{{ path('catalog_item', { id: product.id }) }}">
                             <img src="{{product.image}}" alt="Sin imagen" style="width:300px;height:200px">
                             <div class="caption">
@@ -91,16 +93,16 @@
                                 <p><b>Categoría: </b>{{product.category}}</p>
                                 <p><b>Proveedor: </b>{{product.provider}}</p>
                             </div>
-                            <div class="ratings">
-                                <p class="pull-right">15 reviews</p>
-                                <p>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                    <span class="icon-star"></span>
-                                </p>
-                            </div>
+                            {#<div class="ratings">#}
+                                {#<p class="pull-right">15 reviews</p>#}
+                                {#<p>#}
+                                    {#<span class="icon-star"></span>#}
+                                    {#<span class="icon-star"></span>#}
+                                    {#<span class="icon-star"></span>#}
+                                    {#<span class="icon-star"></span>#}
+                                    {#<span class="icon-star"></span>#}
+                                {#</p>#}
+                            {#</div>#}
                         </a>
                     </div>
                 {% endfor %}

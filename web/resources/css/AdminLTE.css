@@ -2820,3 +2820,6 @@ Component: timeline
   text-align: center;
   font-weight: normal;
 }
+.modal-lg {
+    width: 900px;
+}

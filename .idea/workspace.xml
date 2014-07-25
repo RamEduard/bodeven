@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c21bcab9-5b17-4dd8-8329-6c56c61451cf" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\doctrine\annotations\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\doctrine\annotations\.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\doctrine\cache\.coveralls.yml" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\doctrine\cache\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\doctrine\cache\.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\doctrine\collections\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\doctrine\collections\.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\doctrine\common\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\doctrine\common\.gitmodules" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\doctrine\common\.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\doctrine\dbal\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\doctrine\dbal\.gitmodules" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\doctrine\dbal\.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\monolog\monolog\tests\Monolog\Handler\Fixtures\.gitkeep" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\pimple\pimple\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\pimple\pimple\.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\psr\log\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\silex\silex\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\silex\silex\.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\swiftmailer\swiftmailer\.gitattributes" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\swiftmailer\swiftmailer\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\swiftmailer\swiftmailer\.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\browser-kit\Symfony\Component\BrowserKit\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\config\Symfony\Component\Config\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\console\Symfony\Component\Console\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\css-selector\Symfony\Component\CssSelector\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\debug\Symfony\Component\Debug\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\dom-crawler\Symfony\Component\DomCrawler\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\event-dispatcher\Symfony\Component\EventDispatcher\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\filesystem\Symfony\Component\Filesystem\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\finder\Symfony\Component\Finder\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\form\Symfony\Component\Form\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Tests\File\Fixtures\.unknownextension" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Tests\File\Fixtures\directory\.empty" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\http-kernel\Symfony\Component\HttpKernel\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\icu\Symfony\Component\Icu\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\icu\Symfony\Component\Icu\Resources\data\curr\.goutputstream-DU4TIX" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\intl\Symfony\Component\Intl\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\locale\Symfony\Component\Locale\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\monolog-bridge\Symfony\Bridge\Monolog\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\options-resolver\Symfony\Component\OptionsResolver\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\process\Symfony\Component\Process\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\property-access\Symfony\Component\PropertyAccess\.gitattributes" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\property-access\Symfony\Component\PropertyAccess\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\routing\Symfony\Component\Routing\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\security\Symfony\Component\Security\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\security\Symfony\Component\Security\Acl\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\security\Symfony\Component\Security\Core\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\security\Symfony\Component\Security\Csrf\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\security\Symfony\Component\Security\Http\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\serializer\Symfony\Component\Serializer\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\translation\Symfony\Component\Translation\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\twig-bridge\Symfony\Bridge\Twig\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\symfony\validator\Symfony\Component\Validator\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\twig\twig\.editorconfig" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\twig\twig\.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\vendor\twig\twig\.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\web\server_vhost.php" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\web\views\backend\image\create.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\web\views\backend\image\edit.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="C:\xampp\htdocs\bodeven2\web\views\backend\image\list.html.twig" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.ja.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.ja.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/404_500_errors.less" afterPath="$PROJECT_DIR$/web/resources/less/404_500_errors.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/css/AdminLTE.css" afterPath="$PROJECT_DIR$/web/resources/css/AdminLTE.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/AdminLTE.less" afterPath="$PROJECT_DIR$/web/resources/less/AdminLTE.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/browser-kit/Symfony/Component/BrowserKit/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/browser-kit/Symfony/Component/BrowserKit/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/config/Symfony/Component/Config/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/config/Symfony/Component/Config/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Symfony/Component/Console/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/console/Symfony/Component/Console/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/css-selector/Symfony/Component/CssSelector/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/css-selector/Symfony/Component/CssSelector/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/debug/Symfony/Component/Debug/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/debug/Symfony/Component/Debug/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Symfony/Component/DomCrawler/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Symfony/Component/DomCrawler/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/filesystem/Symfony/Component/Filesystem/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/filesystem/Symfony/Component/Filesystem/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Symfony/Component/Finder/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Symfony/Component/Finder/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/locale/Symfony/Component/Locale/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/locale/Symfony/Component/Locale/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/monolog-bridge/Symfony/Bridge/Monolog/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/monolog-bridge/Symfony/Bridge/Monolog/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/process/Symfony/Component/Process/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/process/Symfony/Component/Process/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/property-access/Symfony/Component/PropertyAccess/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Symfony/Component/PropertyAccess/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/serializer/Symfony/Component/Serializer/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/serializer/Symfony/Component/Serializer/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Symfony/Component/Translation/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Symfony/Component/Translation/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/twig-bridge/Symfony/Bridge/Twig/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/twig-bridge/Symfony/Bridge/Twig/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/CHANGELOG.md" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/CHANGELOG.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/monolog/monolog/CHANGELOG.mdown" afterPath="$PROJECT_DIR$/vendor/monolog/monolog/CHANGELOG.mdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/intl/Symfony/Component/Intl/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/vendor/symfony/intl/Symfony/Component/Intl/CONTRIBUTING.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/annotations/README.md" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/README.md" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/collections/README.md" afterPath="$PROJECT_DIR$/vendor/doctrine/collections/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/README.md" afterPath="$PROJECT_DIR$/vendor/doctrine/common/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/README.md" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/docs/examples/sharding/README.md" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/docs/examples/sharding/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/inflector/README.md" afterPath="$PROJECT_DIR$/vendor/doctrine/inflector/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/lexer/README.md" afterPath="$PROJECT_DIR$/vendor/doctrine/lexer/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/psr/log/README.md" afterPath="$PROJECT_DIR$/vendor/psr/log/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/browser-kit/Symfony/Component/BrowserKit/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/browser-kit/Symfony/Component/BrowserKit/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/config/Symfony/Component/Config/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/config/Symfony/Component/Config/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Symfony/Component/Console/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/console/Symfony/Component/Console/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/css-selector/Symfony/Component/CssSelector/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/css-selector/Symfony/Component/CssSelector/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/debug/Symfony/Component/Debug/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/debug/Symfony/Component/Debug/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Symfony/Component/DomCrawler/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Symfony/Component/DomCrawler/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/filesystem/Symfony/Component/Filesystem/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/filesystem/Symfony/Component/Filesystem/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Symfony/Component/Finder/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Symfony/Component/Finder/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/icu/Symfony/Component/Icu/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/icu/Symfony/Component/Icu/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/intl/Symfony/Component/Intl/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/intl/Symfony/Component/Intl/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/locale/Symfony/Component/Locale/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/locale/Symfony/Component/Locale/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/monolog-bridge/Symfony/Bridge/Monolog/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/monolog-bridge/Symfony/Bridge/Monolog/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/options-resolver/Symfony/Component/OptionsResolver/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Symfony/Component/OptionsResolver/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/process/Symfony/Component/Process/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/process/Symfony/Component/Process/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/property-access/Symfony/Component/PropertyAccess/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Symfony/Component/PropertyAccess/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Acl/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Acl/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Csrf/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Csrf/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Http/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Http/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/serializer/Symfony/Component/Serializer/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/serializer/Symfony/Component/Serializer/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Symfony/Component/Translation/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Symfony/Component/Translation/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/twig-bridge/Symfony/Bridge/Twig/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/twig-bridge/Symfony/Bridge/Twig/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/README.md" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/js/plugins/ckeditor/README.md" afterPath="$PROJECT_DIR$/web/resources/js/plugins/ckeditor/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/monolog/monolog/README.mdown" afterPath="$PROJECT_DIR$/vendor/monolog/monolog/README.mdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/pimple/pimple/README.rst" afterPath="$PROJECT_DIR$/vendor/pimple/pimple/README.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/README.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/README.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/twig/twig/README.rst" afterPath="$PROJECT_DIR$/vendor/twig/twig/README.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/docs/design/SHARDING.md" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/docs/design/SHARDING.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/frontend/about.html.twig" afterPath="$PROJECT_DIR$/web/views/frontend/about.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/ag_alerts.html.twig" afterPath="$PROJECT_DIR$/web/views/ag_alerts.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/ag_dashboard.html.twig" afterPath="$PROJECT_DIR$/web/views/ag_dashboard.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/ag_header.html.twig" afterPath="$PROJECT_DIR$/web/views/ag_header.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/ag_menu.html.twig" afterPath="$PROJECT_DIR$/web/views/ag_menu.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/alerts.less" afterPath="$PROJECT_DIR$/web/resources/less/alerts.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/js/AdminLTE/app.js" afterPath="$PROJECT_DIR$/web/resources/js/AdminLTE/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/assets.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/assets.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/ag_base/backend.html.twig" afterPath="$PROJECT_DIR$/web/views/ag_base/backend.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/ag_base/base.html.twig" afterPath="$PROJECT_DIR$/web/views/ag_base/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/routes/backend/base.php" afterPath="$PROJECT_DIR$/web/routes/backend/base.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/routes/frontend/base.php" afterPath="$PROJECT_DIR$/web/routes/frontend/base.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/boxes.less" afterPath="$PROJECT_DIR$/web/resources/less/boxes.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/build.properties" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/build.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/build.properties" afterPath="$PROJECT_DIR$/vendor/doctrine/common/build.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/build.properties" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/build.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/buttons.less" afterPath="$PROJECT_DIR$/web/resources/less/buttons.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/callout.less" afterPath="$PROJECT_DIR$/web/resources/less/callout.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/frontend/catalog.html.twig" afterPath="$PROJECT_DIR$/web/views/frontend/catalog.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/frontend/catalog_item.html.twig" afterPath="$PROJECT_DIR$/web/views/frontend/catalog_item.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/changelog.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/changelog.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/routes/backend/colors.php" afterPath="$PROJECT_DIR$/web/routes/backend/colors.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bodeven/bodeven/src/Bodeven/composer.json" afterPath="$PROJECT_DIR$/vendor/bodeven/bodeven/src/Bodeven/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/annotations/composer.json" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/cache/composer.json" afterPath="$PROJECT_DIR$/vendor/doctrine/cache/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/collections/composer.json" afterPath="$PROJECT_DIR$/vendor/doctrine/collections/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/common/composer.json" afterPath="$PROJECT_DIR$/vendor/doctrine/common/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/composer.json" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/dbal/docs/examples/sharding/composer.json" afterPath="$PROJECT_DIR$/vendor/doctrine/dbal/docs/examples/sharding/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/inflector/composer.json" afterPath="$PROJECT_DIR$/vendor/doctrine/inflector/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/lexer/composer.json" afterPath="$PROJECT_DIR$/vendor/doctrine/lexer/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/monolog/monolog/composer.json" afterPath="$PROJECT_DIR$/vendor/monolog/monolog/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/pimple/pimple/composer.json" afterPath="$PROJECT_DIR$/vendor/pimple/pimple/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/psr/log/composer.json" afterPath="$PROJECT_DIR$/vendor/psr/log/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/composer.json" afterPath="$PROJECT_DIR$/vendor/silex/silex/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/composer.json" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/browser-kit/Symfony/Component/BrowserKit/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/browser-kit/Symfony/Component/BrowserKit/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/config/Symfony/Component/Config/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/config/Symfony/Component/Config/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/console/Symfony/Component/Console/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/console/Symfony/Component/Console/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/css-selector/Symfony/Component/CssSelector/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/css-selector/Symfony/Component/CssSelector/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/debug/Symfony/Component/Debug/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/debug/Symfony/Component/Debug/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Symfony/Component/DomCrawler/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/dom-crawler/Symfony/Component/DomCrawler/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/filesystem/Symfony/Component/Filesystem/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/filesystem/Symfony/Component/Filesystem/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Symfony/Component/Finder/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Symfony/Component/Finder/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/icu/Symfony/Component/Icu/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/icu/Symfony/Component/Icu/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/intl/Symfony/Component/Intl/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/intl/Symfony/Component/Intl/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/locale/Symfony/Component/Locale/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/locale/Symfony/Component/Locale/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/monolog-bridge/Symfony/Bridge/Monolog/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/monolog-bridge/Symfony/Bridge/Monolog/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/options-resolver/Symfony/Component/OptionsResolver/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/options-resolver/Symfony/Component/OptionsResolver/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/process/Symfony/Component/Process/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/process/Symfony/Component/Process/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/property-access/Symfony/Component/PropertyAccess/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/property-access/Symfony/Component/PropertyAccess/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Acl/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Acl/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Csrf/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Csrf/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Http/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Http/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/serializer/Symfony/Component/Serializer/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/serializer/Symfony/Component/Serializer/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Symfony/Component/Translation/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Symfony/Component/Translation/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/twig-bridge/Symfony/Bridge/Twig/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/twig-bridge/Symfony/Bridge/Twig/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/composer.json" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/twig/twig/composer.json" afterPath="$PROJECT_DIR$/vendor/twig/twig/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Mapping/Loader/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Mapping/Loader/schema/dic/constraint-mapping/constraint-mapping-1.0.xsd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/frontend/contact.html.twig" afterPath="$PROJECT_DIR$/web/views/frontend/contact.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/contributing.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/contributing.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/core.less" afterPath="$PROJECT_DIR$/web/resources/less/core.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/categories/create.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/categories/create.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/colors/create.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/colors/create.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/estatus/create.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/estatus/create.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/perfils/create.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/perfils/create.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/products/create.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/products/create.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/providers/create.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/providers/create.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/users/create.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/users/create.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/doctrine.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/doctrine.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/dropdown.less" afterPath="$PROJECT_DIR$/web/resources/less/dropdown.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/categories/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/categories/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/colors/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/colors/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/estatus/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/estatus/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/perfils/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/perfils/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/products/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/products/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/providers/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/providers/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/users/edit.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/users/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/error_handler.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/error_handler.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/monolog/monolog/doc/extending.md" afterPath="$PROJECT_DIR$/vendor/monolog/monolog/doc/extending.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/bin/skeleton/fat_composer.json" afterPath="$PROJECT_DIR$/vendor/silex/silex/bin/skeleton/fat_composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/css/filedrop/filedrop.css" afterPath="$PROJECT_DIR$/web/resources/css/filedrop/filedrop.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/frontend/footer.html.twig" afterPath="$PROJECT_DIR$/web/views/frontend/footer.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/form.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/form.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/twig-bridge/Symfony/Bridge/Twig/Resources/views/Form/form_div_layout.html.twig" afterPath="$PROJECT_DIR$/vendor/symfony/twig-bridge/Symfony/Bridge/Twig/Resources/views/Form/form_div_layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/form_no_csrf.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/form_no_csrf.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/twig-bridge/Symfony/Bridge/Twig/Resources/views/Form/form_table_layout.html.twig" afterPath="$PROJECT_DIR$/vendor/symfony/twig-bridge/Symfony/Bridge/Twig/Resources/views/Form/form_table_layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/forms.less" afterPath="$PROJECT_DIR$/web/resources/less/forms.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/ag_base/frontend.html.twig" afterPath="$PROJECT_DIR$/web/views/ag_base/frontend.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/header.less" afterPath="$PROJECT_DIR$/web/resources/less/header.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/http_cache.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/http_cache.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/http_fragment.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/http_fragment.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/iCheck.less" afterPath="$PROJECT_DIR$/web/resources/less/iCheck.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/intl/Symfony/Component/Intl/Resources/bin/icu.ini" afterPath="$PROJECT_DIR$/vendor/symfony/intl/Symfony/Component/Intl/Resources/bin/icu.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/routes/backend/image.php" afterPath="$PROJECT_DIR$/web/routes/backend/image.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/incomplete.yml" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/incomplete.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/frontend/index.html.twig" afterPath="$PROJECT_DIR$/web/views/frontend/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.php" afterPath="$PROJECT_DIR$/web/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/index.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/index.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/index.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/index.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/index.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/index.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/internals.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/internals.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/intro.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/intro.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/invoice.less" afterPath="$PROJECT_DIR$/web/resources/less/invoice.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/js/plugins/jGrowl/jgrowl.jquery.json" afterPath="$PROJECT_DIR$/web/resources/js/plugins/jGrowl/jgrowl.jquery.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/json_request_body.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/json_request_body.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/categories/list.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/categories/list.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/colors/list.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/colors/list.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/estatus/list.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/estatus/list.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/perfils/list.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/perfils/list.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/products/list.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/products/list.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/providers/list.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/providers/list.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/users/list.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/users/list.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/lockscreen.less" afterPath="$PROJECT_DIR$/web/resources/less/lockscreen.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/backend/auth/login.html.twig" afterPath="$PROJECT_DIR$/web/views/backend/auth/login.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/login_and_register.less" afterPath="$PROJECT_DIR$/web/resources/less/login_and_register.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/mailbox.less" afterPath="$PROJECT_DIR$/web/resources/less/mailbox.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/menu.html.twig" afterPath="$PROJECT_DIR$/web/views/menu.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/views/frontend/menu.html.twig" afterPath="$PROJECT_DIR$/web/views/frontend/menu.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/middlewares.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/middlewares.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/mixins.less" afterPath="$PROJECT_DIR$/web/resources/less/mixins.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/monolog.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/monolog.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/multiple_loggers.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/multiple_loggers.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/navs.less" afterPath="$PROJECT_DIR$/web/resources/less/navs.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/nonesense_resource_plus_path.yml" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/nonesense_resource_plus_path.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/nonesense_type_without_resource.yml" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/nonesense_type_without_resource.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/nonvalid.yml" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/nonvalid.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/nonvalid2.yml" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/nonvalid2.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/nonvalidkeys.yml" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/nonvalidkeys.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/organizing_controllers.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/organizing_controllers.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/pace.less" afterPath="$PROJECT_DIR$/web/resources/less/pace.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/routes/backend/perfils.php" afterPath="$PROJECT_DIR$/web/routes/backend/perfils.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/phar.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/phar.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/js/plugins/input-mask/phone-codes/phone-be.json" afterPath="$PROJECT_DIR$/web/resources/js/plugins/input-mask/phone-codes/phone-be.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/js/plugins/input-mask/phone-codes/phone-codes.json" afterPath="$PROJECT_DIR$/web/resources/js/plugins/input-mask/phone-codes/phone-codes.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/doctrine/annotations/phpunit.xml.dist" afterPath="$PROJECT_DIR$/vendor/doctrine/annotations/phpunit.xml.dist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/monolog/monolog/phpunit.xml.dist" afterPath="$PROJECT_DIR$/vendor/monolog/monolog/phpunit.xml.dist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/pimple/pimple/phpunit.xml.dist" afterPath="$PROJECT_DIR$/vendor/pimple/pimple/phpunit.xml.dist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/phpunit.xml.dist" afterPath="$PROJECT_DIR$/vendor/silex/silex/phpunit.xml.dist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/debug/Symfony/Component/Debug/phpunit.xml.dist" afterPath="$PROJECT_DIR$/vendor/symfony/debug/Symfony/Component/Debug/phpunit.xml.dist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/phpunit.xml.dist" afterPath="$PROJECT_DIR$/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/phpunit.xml.dist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/phpunit.xml.dist" afterPath="$PROJECT_DIR$/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/phpunit.xml.dist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/phpunit.xml.dist" afterPath="$PROJECT_DIR$/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/phpunit.xml.dist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/phpunit.xml.dist" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/phpunit.xml.dist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/routes/backend/products.php" afterPath="$PROJECT_DIR$/web/routes/backend/products.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/progress-bars.less" afterPath="$PROJECT_DIR$/web/resources/less/progress-bars.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/routes/backend/providers.php" afterPath="$PROJECT_DIR$/web/routes/backend/providers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/remember_me.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/remember_me.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc0821.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc0821.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc0822.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc0822.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc1341.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc1341.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc1521.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc1521.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc1854.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc1854.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2015.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2015.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2045.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2045.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2046.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2046.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2047.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2047.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2048.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2048.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2049.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2049.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2183.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2183.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2222.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2222.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2231.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2231.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2234.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2234.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2440.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2440.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2487.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2487.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2554.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2554.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2821.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2821.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2822.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc2822.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc3156.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc3156.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc3676.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc3676.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc4505.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc4505.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc4616.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc4616.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc4870.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc4870.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc4871.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc4871.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc4880.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc4880.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc4954.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc4954.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc5751.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/rfc5751.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Loader/schema/routing/routing-1.0.xsd" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Loader/schema/routing/routing-1.0.xsd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.ar.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.ar.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.ar.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.ar.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.bg.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.bg.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.ca.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.ca.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.ca.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.ca.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.cs.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.cs.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.cs.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.cs.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.da.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.da.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.da.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.da.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.de.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.de.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.de.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.de.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.el.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.el.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.el.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.el.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.en.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.en.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.en.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.en.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.es.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.es.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.es.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.es.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.fa.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.fa.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.fa.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.fa.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.fr.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.fr.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.fr.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.fr.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.gl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.gl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.gl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.gl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.hr.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.hr.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.hu.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.hu.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.hu.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.hu.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.id.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.id.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.it.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.it.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.it.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.it.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.ja.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.ja.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.lb.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.lb.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.lb.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.lb.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.nl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.nl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.nl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.nl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.no.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.no.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.no.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.no.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.pl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.pl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.pl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.pl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.pt_BR.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.pt_BR.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.pt_BR.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.pt_BR.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.pt_PT.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.pt_PT.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.pt_PT.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.pt_PT.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.ro.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.ro.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.ro.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.ro.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/security.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/security.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.ru.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.ru.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.ru.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.ru.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.sk.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.sk.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.sk.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.sk.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.sl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.sl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.sl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.sl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.sr_Cyrl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.sr_Cyrl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.sr_Cyrl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.sr_Cyrl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.sr_Latn.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.sr_Latn.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.sr_Latn.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.sr_Latn.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.sv.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.sv.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.sv.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.sv.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.th.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.th.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.tr.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.tr.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.tr.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.tr.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.ua.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Core/Resources/translations/security.ua.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.ua.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.ua.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.vi.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.vi.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.zh_CN.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/security/Symfony/Component/Security/Resources/translations/security.zh_CN.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/serializer.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/serializer.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/service_controller.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/service_controller.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/services.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/services.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/session.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/session.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/session_storage.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/session_storage.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/sidebar.less" afterPath="$PROJECT_DIR$/web/resources/less/sidebar.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/skins.less" afterPath="$PROJECT_DIR$/web/resources/less/skins.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/js/plugins/slimScroll/slimScroll.jquery.json" afterPath="$PROJECT_DIR$/web/resources/js/plugins/slimScroll/slimScroll.jquery.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/bin/skeleton/slim_composer.json" afterPath="$PROJECT_DIR$/vendor/silex/silex/bin/skeleton/slim_composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/small-box.less" afterPath="$PROJECT_DIR$/web/resources/less/small-box.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/smtp.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/smtp.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/monolog/monolog/doc/sockets.md" afterPath="$PROJECT_DIR$/vendor/monolog/monolog/doc/sockets.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/special_route_name.yml" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/special_route_name.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/sub_requests.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/sub_requests.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/swiftmailer.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/swiftmailer.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/testing.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/testing.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/timeline.less" afterPath="$PROJECT_DIR$/web/resources/less/timeline.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/translating_validation_messages.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/translating_validation_messages.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/translation.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/translation.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/twig.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/twig.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/url_generator.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/url_generator.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/dumper/url_matcher1.apache" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/dumper/url_matcher1.apache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/dumper/url_matcher2.apache" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/dumper/url_matcher2.apache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/monolog/monolog/doc/usage.md" afterPath="$PROJECT_DIR$/vendor/monolog/monolog/doc/usage.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/usage.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/usage.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/routes/backend/users.php" afterPath="$PROJECT_DIR$/web/routes/backend/users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/validator.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/providers/validator.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/validator_yaml.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/cookbook/validator_yaml.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.af.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.af.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.ar.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.ar.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.ar.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.ar.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.ca.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.ca.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.ca.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.ca.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.cs.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.cs.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.cs.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.cs.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.cy.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.cy.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.da.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.da.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.da.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.da.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.de.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.de.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.de.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.de.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.el.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.el.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.el.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.el.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.en.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.en.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.en.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.en.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.es.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.es.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.es.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.es.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.et.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.et.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.et.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.et.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.eu.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.eu.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.eu.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.eu.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.fa.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.fa.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.fa.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.fa.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.fi.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.fi.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.fi.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.fi.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.fr.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.fr.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.fr.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.fr.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.gl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.gl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.gl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.gl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.he.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.he.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.he.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.he.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.hr.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.hr.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.hr.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.hr.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.hu.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.hu.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.hu.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.hu.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.hy.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.hy.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.hy.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.hy.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.id.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.id.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.id.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.id.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.it.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.it.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.it.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.it.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.ja.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.ja.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.lb.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.lb.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.lb.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.lb.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.lt.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.lt.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.lt.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.lt.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.lv.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.lv.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.mn.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.mn.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.mn.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.mn.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.nb.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.nb.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.nb.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.nb.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.nl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.nl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.nl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.nl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.no.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.no.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.pl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.pl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.pl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.pl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.pt.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.pt.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.pt.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.pt.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.pt_BR.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.pt_BR.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.pt_BR.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.pt_BR.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.ro.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.ro.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.ro.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.ro.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.ru.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.ru.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.ru.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.ru.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.sk.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.sk.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.sk.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.sk.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.sl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.sl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.sl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.sl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.sq.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.sq.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.sr_Cyrl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.sr_Cyrl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.sr_Cyrl.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.sr_Cyrl.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.sr_Latn.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.sr_Latn.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.sr_Latn.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.sr_Latn.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.sv.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.sv.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.sv.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.sv.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.th.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.th.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.tr.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.tr.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.uk.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.uk.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.uk.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.uk.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.vi.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.vi.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.zh_CN.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/form/Symfony/Component/Form/Resources/translations/validators.zh_CN.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.zh_CN.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.zh_CN.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.zh_TW.xlf" afterPath="$PROJECT_DIR$/vendor/symfony/validator/Symfony/Component/Validator/Resources/translations/validators.zh_TW.xlf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/validpattern.yml" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/validpattern.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/validresource.yml" afterPath="$PROJECT_DIR$/vendor/symfony/routing/Symfony/Component/Routing/Tests/Fixtures/validresource.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/resources/less/vars.less" afterPath="$PROJECT_DIR$/web/resources/less/vars.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/silex/silex/doc/web_servers.rst" afterPath="$PROJECT_DIR$/vendor/silex/silex/doc/web_servers.rst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/whats_where.txt" afterPath="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer/notes/rfc/whats_where.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Symfony/Component/Translation/Loader/schema/dic/xliff-core/xliff-core-1.2-strict.xsd" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Symfony/Component/Translation/Loader/schema/dic/xliff-core/xliff-core-1.2-strict.xsd" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/translation/Symfony/Component/Translation/Loader/schema/dic/xliff-core/xml.xsd" afterPath="$PROJECT_DIR$/vendor/symfony/translation/Symfony/Component/Translation/Loader/schema/dic/xliff-core/xml.xsd" />
+    </list>
+    <ignored path="bodeven2.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="bodeven2" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf />
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/web/routes/backend/base.php" />
+        <option value="$PROJECT_DIR$/web/server_vhost.php" />
+        <option value="$PROJECT_DIR$/web/routes/backend/image.php" />
+        <option value="$PROJECT_DIR$/web/views/backend/image/list.html.twig" />
+        <option value="$PROJECT_DIR$/web/views/backend/image/edit.html.twig" />
+        <option value="$PROJECT_DIR$/web/views/backend/image/create.html.twig" />
+        <option value="$PROJECT_DIR$/web/views/backend/users/create.html.twig" />
+        <option value="$PROJECT_DIR$/web/views/backend/users/list.html.twig" />
+        <option value="$PROJECT_DIR$/web/views/backend/users/edit.html.twig" />
+        <option value="$PROJECT_DIR$/web/views/menu.html.twig" />
+        <option value="$PROJECT_DIR$/web/routes/errors/base.php" />
+        <option value="$PROJECT_DIR$/web/routes/backend/users.php" />
+        <option value="$PROJECT_DIR$/web/index.php" />
+        <option value="$PROJECT_DIR$/web/views/frontend/contact.html.twig" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="54" />
+    <option name="y" value="-8" />
+    <option name="width" value="1874" />
+    <option name="height" value="1096" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bodeven2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bodeven2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bodeven2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bodeven2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bodeven2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bodeven2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bodeven2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bodeven2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bodeven2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="frontend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bodeven2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bodeven2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bodeven2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bodeven2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="errors" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bodeven2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bodeven2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../precursor-silex" />
+    <property name="SearchEverywhereHistory" value="$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\bodeven2\web\resources\css" />
+      <recent name="C:\xampp\htdocs\bodeven2\web\resources\js\plugins" />
+      <recent name="C:\xampp\htdocs\bodeven2\web" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <list size="0" />
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c21bcab9-5b17-4dd8-8329-6c56c61451cf" name="Default" comment="" />
+      <created>1405458732202</created>
+      <updated>1405458732202</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="54" y="-8" width="1874" height="1096" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497309" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/web/routes/backend/base.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="29" selection-start="183" selection-end="183" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="391" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/imagen.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="655" selection-end="1405" vertical-scroll-proportion="-9.52" vertical-offset="0" max-vertical-offset="799" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/routes/backend/image.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="153" column="13" selection-start="4249" selection-end="4249" vertical-scroll-proportion="0.89114195" vertical-offset="1732" max-vertical-offset="2669" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/backend/categories/create.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="19" selection-start="12" selection-end="19" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/js/plugins/filedrop/jquery.filedrop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5032" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/resources/css/filedrop/filedrop.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1547">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/routes/backend/products.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="27" selection-start="1203" selection-end="1226" vertical-scroll-proportion="0.22077923" vertical-offset="561" max-vertical-offset="4284">
+          <folding>
+            <marker date="1406181089000" expanded="true" signature="-1:-1" placeholder="SELECT `prod..." />
+            <marker date="1406181089000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1406181089000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1406181089000" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1406181089000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1406181089000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1406181089000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1406181089000" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1406181089000" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/backend/users/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="28" selection-start="527" selection-end="527" vertical-scroll-proportion="0.27214515" vertical-offset="0" max-vertical-offset="1581">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/backend/users/create.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="148" selection-start="2678" selection-end="2790" vertical-scroll-proportion="1.3062967" vertical-offset="0" max-vertical-offset="1581">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/backend/users/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="64" selection-start="2722" selection-end="2722" vertical-scroll-proportion="0.71753246" vertical-offset="561" max-vertical-offset="1785">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/routes/backend/users.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="251" column="50" selection-start="8375" selection-end="8375" vertical-scroll-proportion="1.9957311" vertical-offset="2397" max-vertical-offset="5270">
+          <folding>
+            <marker date="1406324354656" expanded="true" signature="-1:-1" placeholder="SELECT `user..." />
+            <marker date="1406324354656" expanded="true" signature="-1:-1" placeholder="SELECT `name..." />
+            <marker date="1406324354656" expanded="true" signature="-1:-1" placeholder="SELECT `id`,..." />
+            <marker date="1406324354656" expanded="true" signature="-1:-1" placeholder="SELECT `id`,..." />
+            <marker date="1406324354656" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1406324354656" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1406324354656" expanded="true" signature="-1:-1" placeholder="SELECT `id`,..." />
+            <marker date="1406324354656" expanded="true" signature="-1:-1" placeholder="SELECT `id`,..." />
+            <marker date="1406324354656" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1406324354656" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/routes/errors/base.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="5" selection-start="939" selection-end="939" vertical-scroll-proportion="0.41728923" vertical-offset="0" max-vertical-offset="937">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/menu.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="0" selection-start="2617" selection-end="2619" vertical-scroll-proportion="0.6504329" vertical-offset="62" max-vertical-offset="1972">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="77" selection-start="1906" selection-end="1906" vertical-scroll-proportion="0.50160086" vertical-offset="431" max-vertical-offset="1598">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/views/frontend/contact.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="27" selection-start="4206" selection-end="4206" vertical-scroll-proportion="0.79761904" vertical-offset="844" max-vertical-offset="1768">
+          <folding>
+            <element signature="e#561#601#0" expanded="true" />
+            <element signature="e#1173#1196#0" expanded="true" />
+            <element signature="e#1580#1598#0" expanded="true" />
+            <element signature="e#1814#1837#0" expanded="true" />
+            <element signature="e#2245#2263#0" expanded="true" />
+            <element signature="e#2438#2461#0" expanded="true" />
+            <element signature="e#2862#2880#0" expanded="true" />
+            <element signature="e#3467#3485#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

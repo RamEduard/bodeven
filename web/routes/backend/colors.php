@@ -2,58 +2,50 @@
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-$app->match('/admin/colors', function () use ($app) {
+$app->match('/admin/colors/{productId}', function ($productId) use ($app) {
     
 	$table_columns = array(
 		'id', 
 		'product_id', 
 		'name', 
-		'color', 
-
+		'color_hex',
     );
 
     $primary_key = "id";
 	$rows = array();
 
-    $find_sql = "SELECT * FROM `colors`";
-    $rows_sql = $app['db']->fetchAll($find_sql, array());
+    $find_sql = "SELECT * FROM `colors` WHERE product_id = ?";
+    $rows_sql = $app['db']->fetchAll($find_sql, array($productId));
 
-    foreach($rows_sql as $row_key => $row_sql){
-    	for($i = 0; $i < count($table_columns); $i++){
-
-		$rows[$row_key][$table_columns[$i]] = $row_sql[$table_columns[$i]];
-
-
+    foreach($rows_sql as $row_key => $row_sql) {
+    	for($i = 0; $i < count($table_columns); $i++) {
+		    $rows[$row_key][$table_columns[$i]] = $row_sql[$table_columns[$i]];
     	}
     }
 
     return $app['twig']->render('backend/colors/list.html.twig', array(
     	"table_columns" => $table_columns,
         "primary_key" => $primary_key,
-    	"rows" => $rows
+    	"rows" => $rows,
+        "productId" => $productId
     ));
         
 })
 ->bind('colors_list');
 
-
-
-$app->match('/admin/colors/create', function () use ($app) {
+$app->match('/admin/colors/{productId}/create', function ($productId) use ($app) {
     
     $initial_data = array(
-		'product_id' => '', 
+		'product_id' => $productId,
 		'name' => '', 
-		'color' => '', 
-
+		'color_hex' => '',
     );
 
     $form = $app['form.factory']->createBuilder('form', $initial_data);
 
-
-
-	$form = $form->add('product_id', 'text', array('required' => true));
+	$form = $form->add('product_id', 'hidden', array('required' => true));
 	$form = $form->add('name', 'text', array('required' => true));
-	$form = $form->add('color', 'text', array('required' => true));
+	$form = $form->add('color_hex', 'text', array('required' => true));
 
 
     $form = $form->getForm();
@@ -65,23 +57,23 @@ $app->match('/admin/colors/create', function () use ($app) {
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "INSERT INTO `colors` (`product_id`, `name`, `color`) VALUES (?, ?, ?)";
-            $app['db']->executeUpdate($update_query, array($data['product_id'], $data['name'], $data['color']));            
-
+            $update_query = "INSERT INTO `colors` (`product_id`, `name`, `color_hex`) VALUES (?, ?, ?)";
+            $app['db']->executeUpdate($update_query, array($data['product_id'], $data['name'], $data['color_hex']));
 
             $app['session']->getFlashBag()->add(
                 'success',
                 array(
-                    'message' => 'colors created!',
+                    'message' => '¡Color agregado!',
                 )
             );
-            return $app->redirect($app['url_generator']->generate('colors_list'));
+            return $app->redirect($app['url_generator']->generate('colors_list', array('productId' => $productId)));
 
         }
     }
 
     return $app['twig']->render('backend/colors/create.html.twig', array(
-        "form" => $form->createView()
+        "form" => $form->createView(),
+        "productId" => $productId
     ));
         
 })
@@ -89,7 +81,7 @@ $app->match('/admin/colors/create', function () use ($app) {
 
 
 
-$app->match('/admin/colors/edit/{id}', function ($id) use ($app) {
+$app->match('/admin/colors/{productId}/edit/{id}', function ($productId, $id) use ($app) {
 
     $find_sql = "SELECT * FROM `colors` WHERE `id` = ?";
     $row_sql = $app['db']->fetchAssoc($find_sql, array($id));
@@ -98,7 +90,7 @@ $app->match('/admin/colors/edit/{id}', function ($id) use ($app) {
         $app['session']->getFlashBag()->add(
             'danger',
             array(
-                'message' => 'Row not found!',
+                'message' => '¡Color del producto no encontrado!',
             )
         );        
         return $app->redirect($app['url_generator']->generate('colors_list'));
@@ -106,20 +98,15 @@ $app->match('/admin/colors/edit/{id}', function ($id) use ($app) {
 
     
     $initial_data = array(
-		'product_id' => $row_sql['product_id'], 
-		'name' => $row_sql['name'], 
-		'color' => $row_sql['color'], 
-
+		'name' => $row_sql['name'],
+		'color_hex' => $row_sql['color_hex'],
     );
 
 
     $form = $app['form.factory']->createBuilder('form', $initial_data);
 
-
-	$form = $form->add('product_id', 'text', array('required' => true));
 	$form = $form->add('name', 'text', array('required' => true));
-	$form = $form->add('color', 'text', array('required' => true));
-
+	$form = $form->add('color_hex', 'text', array('required' => true));
 
     $form = $form->getForm();
 
@@ -130,24 +117,25 @@ $app->match('/admin/colors/edit/{id}', function ($id) use ($app) {
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "UPDATE `colors` SET `product_id` = ?, `name` = ?, `color` = ? WHERE `id` = ?";
-            $app['db']->executeUpdate($update_query, array($data['product_id'], $data['name'], $data['color'], $id));            
+            $update_query = "UPDATE `colors` SET `name` = ?, `color_hex` = ? WHERE `id` = ? AND `product_id` = ?";
+            $app['db']->executeUpdate($update_query, array($data['name'], $data['color_hex'], $id, $productId));
 
 
             $app['session']->getFlashBag()->add(
                 'success',
                 array(
-                    'message' => 'colors edited!',
+                    'message' => '¡Color del producto editado!',
                 )
             );
-            return $app->redirect($app['url_generator']->generate('colors_edit', array("id" => $id)));
+            return $app->redirect($app['url_generator']->generate('colors_edit', array( "productId" => $productId, "id" => $id)));
 
         }
     }
 
     return $app['twig']->render('backend/colors/edit.html.twig', array(
-        "form" => $form->createView(),
-        "id" => $id
+        "form"      => $form->createView(),
+        "id"        => $id,
+        "productId" => $productId
     ));
         
 })
@@ -155,7 +143,7 @@ $app->match('/admin/colors/edit/{id}', function ($id) use ($app) {
 
 
 
-$app->match('/admin/colors/delete/{id}', function ($id) use ($app) {
+$app->match('/admin/colors/{productId}/delete/{id}', function ($productId, $id) use ($app) {
 
     $find_sql = "SELECT * FROM `colors` WHERE `id` = ?";
     $row_sql = $app['db']->fetchAssoc($find_sql, array($id));
@@ -167,7 +155,7 @@ $app->match('/admin/colors/delete/{id}', function ($id) use ($app) {
         $app['session']->getFlashBag()->add(
             'success',
             array(
-                'message' => 'colors deleted!',
+                'message' => '¡Color del producto eliminado!',
             )
         );
     }
@@ -175,12 +163,12 @@ $app->match('/admin/colors/delete/{id}', function ($id) use ($app) {
         $app['session']->getFlashBag()->add(
             'danger',
             array(
-                'message' => 'Row not found!',
+                'message' => '¡Color del producto no encontrado!',
             )
         );  
     }
 
-    return $app->redirect($app['url_generator']->generate('colors_list'));
+    return $app->redirect($app['url_generator']->generate('colors_list', array("productId" => $productId)));
 
 })
 ->bind('colors_delete');

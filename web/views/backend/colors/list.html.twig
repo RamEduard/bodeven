@@ -2,7 +2,6 @@
 
 {% block body_params %}class="skin-blue"{% endblock %}
 
-
 {% block javascripts %}
 
     {{ parent() }}
@@ -14,7 +13,7 @@
         });
 
         function confirm_delete(){
-            if(!confirm("Are you sure? This action cannot be undone.")) { 
+            if(!confirm("¿Realmente desea eliminar? ¡Esta acción no puede deshacer!")) {
                 return false;
             }
         }
@@ -33,7 +32,7 @@
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Colors list
+                    Colores del producto
                 </h1>
             </section>
 
@@ -51,33 +50,37 @@
                             </div><!-- /.box-header -->
 
                             <div class="box-body table-responsive">
-                                <a class="btn btn-primary" href="{{ path('colors_create') }}">Create new colors</a><br /><br />
+                                <a class="btn btn-primary" href="{{ path('colors_create', { productId: productId}) }}">Agregar nuevo color</a>
+                                <button class="btn btn-default" onclick="location.href='{{ path('products_list') }}'">Volver</button>
+                                <br /><br />
                                 <table id="colors_list" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            {% for table_column in table_columns %}
-                                            <th>{{ table_column }}</th>
-                                            {% endfor %}
-                                            <th>Actions</th>
+                                            <th>Nombre</th>
+                                            <th>Color</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {% for row in rows %}
                                             <tr>
-                                                {% for table_column in table_columns %}
-                                                    <td>{{ row[table_column] }}</td>
-                                                {% endfor %}
-                                                <td><a href="{{ path('colors_edit', { id: row[primary_key] }) }}" class="btn btn-primary btn-xs">Edit</a> <a href="{{ path('colors_delete', { id: row[primary_key] }) }}" onclick='return confirm_delete();' class="btn btn-danger btn-xs">Delete</a></td>
+                                                <td>{{ row.name }}</td>
+                                                <td>
+                                                    <div style="background-color: {{ row.color_hex }};width:20px;height: 20px;display: inline-block"></div>
+                                                    {{ row.color_hex }}
+                                                </td>
+                                                <td>
+                                                    <a href="{{ path('colors_edit', { productId: productId, id: row[primary_key] }) }}" class="btn btn-primary btn-xs">Editar</a>
+                                                    <a href="{{ path('colors_delete', { productId: productId, id: row[primary_key] }) }}" onclick='return confirm_delete();' class="btn btn-danger btn-xs">Eliminar</a></td>
                                             </tr>
                                         {% endfor %}                                        
 
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            {% for table_column in table_columns %}
-                                            <th>{{ table_column }}</th>
-                                            {% endfor %}
-                                            <th>Actions</th>
+                                            <th>Nombre</th>
+                                            <th>Color</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </tfoot>
                                 </table>

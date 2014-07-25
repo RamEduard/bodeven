@@ -2,22 +2,23 @@
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-$app->match('/users', function () use ($app) {
+$app->match('/admin/users', function () use ($app) {
     
 	$table_columns = array(
-		'id', 
-		'perfil_id', 
-		'estatus_id', 
+		'id',
+		'perfil',
+		'estatus',
 		'name', 
 		'username', 
-		'password', 
-		'email', 
+		'email',
     );
 
     $primary_key = "id";
 	$rows = array();
 
-    $find_sql = "SELECT * FROM `users`";
+    $find_sql = "SELECT `users`.*, `perfils`.name as perfil, `estatus`.name as estatus FROM `users` ";
+    $find_sql .= "INNER JOIN `estatus` ON estatus_id = `estatus`.id ";
+    $find_sql .= "INNER JOIN `perfils` ON perfil_id = `perfils`.id ";
     $rows_sql = $app['db']->fetchAll($find_sql, array());
 
     foreach($rows_sql as $row_key => $row_sql){
@@ -45,17 +46,24 @@ $app->match('/users', function () use ($app) {
 })
 ->bind('users_list');
 
+$app->match('/admin/users/create', function () use ($app) {
 
+    // Se adquiere el encoder
+    $encoder = $app['security.encoder.digest'];
+    // Se adquiere el token
+    $token = $app['security']->getToken();
+    // Se adquiere el usuario
+    if (is_object($token)) {
+        $user = $token->getUser();
+    }
 
-$app->match('/users/create', function () use ($app) {
-    
     $initial_data = array(
 		'perfil_id' => '', 
 		'estatus_id' => '', 
 		'name' => '', 
 		'username' => '', 
-		'password' => '', 
-		'email' => '', 
+		'password' => '',
+		'email' => '',
 		'created' => '', 
 		'updated' => '', 
 
@@ -81,16 +89,28 @@ $app->match('/users/create', function () use ($app) {
 	    $form = $form->add('estatus_id', 'text', array('required' => true));
 	}
 
+    $options = array();
+    $findexternal_sql = 'SELECT `id`, `name` FROM `perfils` WHERE name != "ROLE_Programador"';
+    $findexternal_rows = $app['db']->fetchAll($findexternal_sql, array());
+    foreach($findexternal_rows as $findexternal_row){
+        $options[$findexternal_row['id']] = $findexternal_row['name'];
+    }
+    if(count($options) > 0){
+        $form = $form->add('perfil_id', 'choice', array(
+            'required' => true,
+            'choices' => $options,
+            'expanded' => false,
+            'constraints' => new Assert\Choice(array_keys($options))
+        ));
+    }
+    else{
+        $form = $form->add('perfil_id', 'text', array('required' => true));
+    }
 
-
-	$form = $form->add('perfil_id', 'text', array('required' => true));
-	$form = $form->add('name', 'textarea', array('required' => true));
+	$form = $form->add('name', 'text', array('required' => true));
 	$form = $form->add('username', 'text', array('required' => true));
-	$form = $form->add('password', 'text', array('required' => true));
-	$form = $form->add('email', 'text', array('required' => true));
-	$form = $form->add('created', 'text', array('required' => true));
-	$form = $form->add('updated', 'text', array('required' => true));
-
+	$form = $form->add('password', 'password', array('required' => true));
+	$form = $form->add('email', 'email', array('required' => true));
 
     $form = $form->getForm();
 
@@ -101,14 +121,17 @@ $app->match('/users/create', function () use ($app) {
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "INSERT INTO `users` (`perfil_id`, `estatus_id`, `name`, `username`, `password`, `email`, `created`, `updated`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-            $app['db']->executeUpdate($update_query, array($data['perfil_id'], $data['estatus_id'], $data['name'], $data['username'], $data['password'], $data['email'], $data['created'], $data['updated']));            
+            // codificar la clave
+            $password = $encoder->encodePassword($data['password'], $user->getSalt());
+
+            $update_query = "INSERT INTO `users` (`perfil_id`, `estatus_id`, `name`, `username`, `password`, `email`, `created`) VALUES (?, ?, ?, ?, ?, ?, NOW())";
+            $app['db']->executeUpdate($update_query, array($data['perfil_id'], $data['estatus_id'], $data['name'], $data['username'], $password, $data['email']));
 
 
             $app['session']->getFlashBag()->add(
                 'success',
                 array(
-                    'message' => 'users created!',
+                    'message' => '¡Usuario creado!',
                 )
             );
             return $app->redirect($app['url_generator']->generate('users_list'));
@@ -125,16 +148,25 @@ $app->match('/users/create', function () use ($app) {
 
 
 
-$app->match('/users/edit/{id}', function ($id) use ($app) {
+$app->match('/admin/users/edit/{id}', function ($id) use ($app) {
 
-    $find_sql = "SELECT * FROM `users` WHERE `id` = ?";
+    // Se adquiere el encoder
+    $encoder = $app['security.encoder.digest'];
+    // Se adquiere el token
+    $token = $app['security']->getToken();
+    // Se adquiere el usuario
+    if (is_object($token)) {
+        $user = $token->getUser();
+    }
+
+    $find_sql = "SELECT * FROM `users` WHERE `id` = ? ";
     $row_sql = $app['db']->fetchAssoc($find_sql, array($id));
 
     if(!$row_sql){
         $app['session']->getFlashBag()->add(
             'danger',
             array(
-                'message' => 'Row not found!',
+                'message' => '¡Usuario no encontrado!',
             )
         );        
         return $app->redirect($app['url_generator']->generate('users_list'));
@@ -146,43 +178,52 @@ $app->match('/users/edit/{id}', function ($id) use ($app) {
 		'estatus_id' => $row_sql['estatus_id'], 
 		'name' => $row_sql['name'], 
 		'username' => $row_sql['username'], 
-		'password' => $row_sql['password'], 
-		'email' => $row_sql['email'], 
-		'created' => $row_sql['created'], 
-		'updated' => $row_sql['updated'], 
-
+		'email' => $row_sql['email'],
     );
 
 
     $form = $app['form.factory']->createBuilder('form', $initial_data);
 
-	$options = array();
-	$findexternal_sql = 'SELECT `id`, `name` FROM `estatus`';
-	$findexternal_rows = $app['db']->fetchAll($findexternal_sql, array());
-	foreach($findexternal_rows as $findexternal_row){
-	    $options[$findexternal_row['id']] = $findexternal_row['name'];
-	}
-	if(count($options) > 0){
-	    $form = $form->add('estatus_id', 'choice', array(
-	        'required' => true,
-	        'choices' => $options,
-	        'expanded' => false,
-	        'constraints' => new Assert\Choice(array_keys($options))
-	    ));
-	}
-	else{
-	    $form = $form->add('estatus_id', 'text', array('required' => true));
-	}
+    $options = array();
+    $findexternal_sql = 'SELECT `id`, `name` FROM `estatus`';
+    $findexternal_rows = $app['db']->fetchAll($findexternal_sql, array());
+    foreach($findexternal_rows as $findexternal_row){
+        $options[$findexternal_row['id']] = $findexternal_row['name'];
+    }
+    if(count($options) > 0){
+        $form = $form->add('estatus_id', 'choice', array(
+            'required' => true,
+            'choices' => $options,
+            'expanded' => false,
+            'constraints' => new Assert\Choice(array_keys($options))
+        ));
+    }
+    else{
+        $form = $form->add('estatus_id', 'text', array('required' => true));
+    }
 
+    $options = array();
+    $findexternal_sql = 'SELECT `id`, `name` FROM `perfils` WHERE name != "ROLE_Programador"';
+    $findexternal_rows = $app['db']->fetchAll($findexternal_sql, array());
+    foreach($findexternal_rows as $findexternal_row){
+        $options[$findexternal_row['id']] = $findexternal_row['name'];
+    }
+    if(count($options) > 0){
+        $form = $form->add('perfil_id', 'choice', array(
+            'required' => true,
+            'choices' => $options,
+            'expanded' => false,
+            'constraints' => new Assert\Choice(array_keys($options))
+        ));
+    }
+    else{
+        $form = $form->add('perfil_id', 'text', array('required' => true));
+    }
 
-	$form = $form->add('perfil_id', 'text', array('required' => true));
 	$form = $form->add('name', 'textarea', array('required' => true));
 	$form = $form->add('username', 'text', array('required' => true));
-	$form = $form->add('password', 'text', array('required' => true));
+	$form = $form->add('password', 'password', array('required' => false));
 	$form = $form->add('email', 'text', array('required' => true));
-	$form = $form->add('created', 'text', array('required' => true));
-	$form = $form->add('updated', 'text', array('required' => true));
-
 
     $form = $form->getForm();
 
@@ -193,14 +234,22 @@ $app->match('/users/edit/{id}', function ($id) use ($app) {
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "UPDATE `users` SET `perfil_id` = ?, `estatus_id` = ?, `name` = ?, `username` = ?, `password` = ?, `email` = ?, `created` = ?, `updated` = ? WHERE `id` = ?";
-            $app['db']->executeUpdate($update_query, array($data['perfil_id'], $data['estatus_id'], $data['name'], $data['username'], $data['password'], $data['email'], $data['created'], $data['updated'], $id));            
+            if (!empty($data['password'])) {
+                // codificar la clave
+                $password = $encoder->encodePassword($data['password'], $user->getSalt());
+
+                $update_query = "UPDATE `users` SET `perfil_id` = ?, `estatus_id` = ?, `name` = ?, `username` = ?, `password` = ?, `email` = ? WHERE `id` = ?";
+                $app['db']->executeUpdate($update_query, array($data['perfil_id'], $data['estatus_id'], $data['name'], $data['username'], $password, $data['email'], $id));
+            } else {
+                $update_query = "UPDATE `users` SET `perfil_id` = ?, `estatus_id` = ?, `name` = ?, `username` = ?, `email` = ? WHERE `id` = ?";
+                $app['db']->executeUpdate($update_query, array($data['perfil_id'], $data['estatus_id'], $data['name'], $data['username'], $data['email'], $id));
+            }
 
 
             $app['session']->getFlashBag()->add(
                 'success',
                 array(
-                    'message' => 'users edited!',
+                    'message' => '¡Usuario editado!',
                 )
             );
             return $app->redirect($app['url_generator']->generate('users_edit', array("id" => $id)));
@@ -218,7 +267,7 @@ $app->match('/users/edit/{id}', function ($id) use ($app) {
 
 
 
-$app->match('/users/delete/{id}', function ($id) use ($app) {
+$app->match('/admin/users/delete/{id}', function ($id) use ($app) {
 
     $find_sql = "SELECT * FROM `users` WHERE `id` = ?";
     $row_sql = $app['db']->fetchAssoc($find_sql, array($id));
