@@ -29,9 +29,24 @@ class Cart {
     }
 
     /**
-     * @return void
+     * @return float
      */
-    public function calculateTotals() { }
+    public function getTotalMount() {
+        $total = 0.0;
+
+        $iterator = $this->products->getIterator();
+        while ($iterator->valid()) {
+            $product = $iterator->current();
+
+            $total_product = $product->count * $product->price;
+
+            $total = $total + $total_product;
+
+            $iterator->next();
+        }
+
+        return $total;
+    }
 
     /**
      * @param \Bodeven\Cart\Product $product

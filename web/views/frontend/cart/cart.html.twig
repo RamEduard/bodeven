@@ -26,68 +26,109 @@
                 </div>
             </div>
         {% else %}
-            <div class="col-md-6 col-lg-6">
-                <h4>Items</h4>
-                <hr>
-
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Imagen</th>
-                            <th>Nombre</th>
-                            <th>Cant.</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for product in products %}
-                            <tr>
-                                <td style="width: 30px">
-                                    {{ product.id }}
-                                </td>
-                                <td style="width: 50px">
-                                    <img src="{{ product.image }}" class="img-responsive" style="width: 50px">
-                                </td>
-                                <td>
-                                    {{ product.name }}
-                                </td>
-                                <td style="width: 30px">
-                                    {{ product.count }}
-                                </td>
-                                <td style="width: 130px">
-                                    {% if product.count > 1 %}
-                                        <form action="{{ path('product_minus') }}" method="post" style="width: 34px; display: inline-block">
+            <div class="col-md-7 col-lg-7">
+                <div class="box box-info" style="padding: 10px">
+                    <div class="box-header">
+                        <h4 class="box-title">Items</h4>
+                    </div>
+                    <div class="box-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Imagen</th>
+                                    <th>Nombre</th>
+                                    <th>Cant.</th>
+                                    <th>Monto</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for product in products %}
+                                <tr>
+                                    <td style="width: 30px">
+                                        {{ product.id }}
+                                    </td>
+                                    <td style="width: 50px">
+                                        <img src="{{ product.image }}" class="img-responsive" style="width: 50px">
+                                    </td>
+                                    <td>
+                                        {{ product.name }}
+                                    </td>
+                                    <td style="width: 30px">
+                                        {{ product.count }}x{{ product.price }}
+                                    </td>
+                                    <td style="width: 30px">
+                                        {{ (product.count * product.price) }}
+                                    </td>
+                                    <td style="width: 130px">
+                                        {% if product.count > 1 %}
+                                            <form action="{{ path('product_minus') }}" method="post" style="width: 34px; display: inline-block">
+                                                <input type="hidden" name="product_id" value="{{ product.id }}">
+                                                <input type="hidden" name="color" value="{{ product.color }}">
+                                                <button type="submit" class="btn btn-default" style="width: 34px; display: inline-block">-</button>
+                                            </form>
+                                        {% endif %}
+                                        <form action="{{ path('product_plus') }}" method="post" style="width: 34px; display: inline-block">
                                             <input type="hidden" name="product_id" value="{{ product.id }}">
                                             <input type="hidden" name="color" value="{{ product.color }}">
-                                            <button type="submit" class="btn btn-default" style="width: 34px; display: inline-block">-</button>
+                                            <button type="submit" class="btn btn-default" style="width: 34px">+</button>
                                         </form>
-                                    {% endif %}
-                                    <form action="{{ path('product_plus') }}" method="post" style="width: 34px; display: inline-block">
-                                        <input type="hidden" name="product_id" value="{{ product.id }}">
-                                        <input type="hidden" name="color" value="{{ product.color }}">
-                                        <button type="submit" class="btn btn-default" style="width: 34px">+</button>
-                                    </form>
-                                    <a href="{{ path('product_remove', { productId: product.id }) }}"
-                                       onclick='return confirm_delete();' class="btn btn-default" style="width: 34px">x</a>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>#</th>
-                            <th>Imagen</th>
-                            <th>Nombre</th>
-                            <th>Cant.</th>
-                            <th></th>
-                        </tr>
-                    </tfoot>
-                </table>
+                                        <a href="{{ path('product_remove', { productId: product.id }) }}"
+                                           onclick='return confirm_delete();' class="btn btn-default" style="width: 34px">x</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th colspan="3"></th>
+                                    <th>Total</th>
+                                    <th>{{ total_mount }}</th>
+                                    <th></th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-6 col-lg-6">
-                <h4>Enviar pedido</h4>
-                <hr>
+            <div class="col-md-5 col-lg-5">
+                <div class="box box-info" style="padding: 10px">
+                    <div class="box-header">
+                        <h4 class="box-title">Enviar pedido</h4>
+                    </div>
+                    {{ form_start(form, {'method': 'POST'}) }}
+                        {{ form_errors(form) }}
+                        <div class="box-body">
+                            <div class="callout callout-info">
+                                <button type="button" class="close" onclick="$('.callout').fadeOut(2000)">×</button>
+                                <h4>Enviar mi pedido</h4>
+                                <p>Toda la información es requerida para la petición del pedido y hacer todos los trámites.</p>
+                                <p class="text-info"><a href="{{ path('contact') }}">Cualquier duda ponerse en contacto con nosotros.</a></p>
+                            </div>
+                            <div class='form-group'>
+                                {{ form_label(form.ci, "Cédula de Identidad:") }}
+                                {{ form_widget(form.ci, { attr: { 'class': 'form-control' }}) }}
+                            </div>
+                            <div class='form-group'>
+                                {{ form_label(form.nombres, "Nombres:") }}
+                                {{ form_widget(form.nombres, { attr: { 'class': 'form-control' }}) }}
+                            </div>
+                            <div class='form-group'>
+                                {{ form_label(form.apellidos, "Apellidos:") }}
+                                {{ form_widget(form.apellidos, { attr: { 'class': 'form-control' }}) }}
+                            </div>
+                            <div class='form-group'>
+                                {{ form_label(form.correo, "Correo electrónico:") }}
+                                {{ form_widget(form.correo, { attr: { 'class': 'form-control' }}) }}
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary">Enviar pedido</button>
+                        </div>
+                        {{ form_rest(form) }}
+                    {{ form_end(form) }}
+                </div>
             </div>
         {% endif %}
     </div>
