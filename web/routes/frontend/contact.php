@@ -7,10 +7,25 @@
 
 $app->match('/contact', function() use($app) {
 
+    if ('POST' == $app['request']->getMethod()) {
+        $nombre = $app['request']->get('nombre');
+        $asunto = $app['request']->get('asunto');
+        $correo = $app['request']->get('correo');
+        $mensaje = $app['request']->get('mensaje');
+
+        $message  = '<div style="margin:auto;position: relative;background: #FFF;border-top: 2px solid #00C0EF;margin-bottom: 20px;border-radius: 3px;width: 90%;box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);padding: 20px 30px">';
+        $message .= "<p>Ha recibido un mensaje de $nombre < $correo > por medio de Uniformes Escolares Bodeven.</p>";
+        $message .= "<p>El mensaje es el siguiente:";
+        $message .= "<div style=\"background-color: #F0F7FD;margin: 0px 0px 20px;padding: 15px 30px 15px 15px;border-left: 5px solid #D0E3F0;\">$mensaje</div>";
+        $message .= '</div>';
+
+        return new \Symfony\Component\HttpFoundation\Response($message);
+    }
+
     return $app['twig']->render('frontend/contact.html.twig', array());
 
 })
-->method('GET')
+->method('GET|POST')
 ->bind('contact');
 
 $app->match('/mail', function() use($app) {
