@@ -25,18 +25,10 @@
                 <a href="{{ path('contact') }}">Contáctanos</a>
             </li>
             <li class="dropdown">
-                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="{{ path('cart') }}">
                     {{ app.cart.getProductsNumber() }}
-                    <i class="glyphicon glyphicon-shopping-cart"></i> <i class="caret"></i>
+                    <i class="glyphicon glyphicon-shopping-cart"></i> Pedido
                 </a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a tabindex="-1" href="{{ path('cart') }}">Ver pedido</a>
-                    </li>
-                    <li>
-                        <a tabindex="-1" href="{{ path('checkout') }}">Enviar pedido</a>
-                    </li>
-                </ul>
             </li>
             {#<li class="dropdown">#}
                 {#<a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Username <i class="caret"></i>#}
