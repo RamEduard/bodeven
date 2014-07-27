@@ -5,16 +5,16 @@
 {% block content %}
     <h1 class="page-header"></h1>
     <div class="row">
-        <div class="col-12 col-md-2 col-xs-2 col-lg-2">
+        <div class="col-12 col-sm-2 col-md-2 col-lg-2">
             <!--<p class="lead">Ver categoría</p>-->
             <div class="list-group">
                 <a href="{{ path('catalog') }}" class="list-group-item">Volver al catálogo</a>
             </div>
         </div>
-        <div class="col-12 col-md-10 col-xs-10 col-lg-10">
+        <div class="col-12 col-sm-10 col-md-10 col-lg-10">
             <div class="row-fluid">
-                <img class="col-12 col-md-6 col-xs-6 col-lg-6" src="{{ product.image }}" style="margin-top:1em" alt="Sin imagen"/>
-                <div class="col-12 col-md-6 col-xs-6 col-lg-6">
+                <img class="col-12 col-sm-6 col-md-6 col-lg-6 img-responsive" src="{{ product.image }}" style="margin-top:1em;max-height: 400px;width: auto" alt="Sin imagen"/>
+                <div class="col-12 col-sm-6 col-md-6col-lg-6">
                     <h2>{{ product.name }} <small>BsF. {{ product.price }}</small></h2>
                     <p><b>Tallas:</b> {{ product.sizes }}</p>
                     <form id="order" method="POST" action="{{ path('addToCart') }}">
@@ -41,13 +41,13 @@
         <p></p>
         <p></p>
         <div class="row-fluid">
-            <div class="col-12 col-md-2 col-xs-2 col-lg-2">&nbsp;</div>
-            <div class="col-12 col-md-10 col-xs-10 col-lg-10">
+            <div class="col-12 col-sm-2 col-md-2 col-lg-2">&nbsp;</div>
+            <div class="col-12 col-sm-10 col-md-10 col-lg-10">
                 <p class="lead" style="margin-top: 10px; margin-bottom: -10px">Productos relacionados</p>
                 <hr>
                 {% if related_products != null %}
                     {% for related_product in related_products %}
-                        <a class="thumbnail col-12 col-md-3 col-xs-4 col-lg-3"
+                        <a class="thumbnail col-12 col-sm-4 col-md-3 col-lg-3"
                            href="{{ path('catalog_item', { id: related_product.id }) }}"
                            style="margin-left:10px">
                             <img src="{{ related_product.image }}" alt="Sin imagen" style="height:100px">

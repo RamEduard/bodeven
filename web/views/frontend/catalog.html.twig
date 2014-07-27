@@ -84,7 +84,7 @@
             </div>-->
             <div class="row">
                 {% for product in products %}
-                    <div class="col-12 col-xs-4 col-md-4 col-lg-4">
+                    <div class="col-12 col-sm-4 col-md-4 col-lg-4">
                         <a class="thumbnail" href="{{ path('catalog_item', { id: product.id }) }}">
                             <img src="{{product.image}}" alt="Sin imagen" style="width:300px;height:200px">
                             <div class="caption">
@@ -106,6 +106,25 @@
                         </a>
                     </div>
                 {% endfor %}
+                <div style="text-align: center">
+                    <ul class="pagination pagination-lg">
+                        {% if numPage != 1 %}
+                            <li>
+                                <a href="{{ path('catalog', {page: (numPage - 1)}) }}">&laquo;</a>
+                            </li>
+                        {% endif %}
+                        {% for page in pages %}
+                            <li {% if numPage == page %}class="active"{% endif %}>
+                                <a href="{{ path('catalog', {page: page}) }}">{{ page }}</a>
+                            </li>
+                        {% endfor %}
+                        {% if numPage != lastPage and numPage < lastPage %}
+                            <li>
+                                <a href="{{ path('catalog', {page: (numPage + 1)}) }}">&raquo;</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
             <div class="row">&nbsp;</div><div class="row">&nbsp;</div>
         </div>

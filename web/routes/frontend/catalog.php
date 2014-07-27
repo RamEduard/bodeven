@@ -53,11 +53,40 @@ $app->match('/catalog', function() use($app) {
     $primary_key = "id";
     $products = array();
 
+    $find_sql = "SELECT * FROM `products`";
+    $rows_sql = $app['db']->fetchAll($find_sql, array());
+
+    $numProd = count($rows_sql);
+    $pages = array();
+
+    if ($numProd > 9) {
+        $numPages = (int) ($numProd/9);
+
+        if ($numPages > 9) {
+            for ($i = 1; $i <= $numPages; $i++) {
+                $pages[] = $i;
+            }
+        }
+
+        for ($i = 1; $i <= $numPages; $i++) {
+            $pages[] = $i;
+        }
+        $lastPage = $i;
+    }
+
+    $numPage = $app['request']->get('page');
+
+    if ($numPage) {
+        $numPageActual = ($numPage - 1) * 9;
+    } else {
+        $numPageActual = 0;
+    }
+
     $find_sql = "SELECT `products`.*, categories.name as category, providers.name as provider FROM `products` ";
     $find_sql .= "INNER JOIN categories ON category_id = categories.id ";
     $find_sql .= "INNER JOIN providers ON provider_id = providers.id ";
     $find_sql .= "ORDER BY `products`.`created` DESC ";
-    #$find_sql .= "LIMIT 0, 10";
+    $find_sql .= "LIMIT $numPageActual, 9";
     $rows_sql = $app['db']->fetchAll($find_sql, array());
 
     foreach($rows_sql as $row_key => $row_sql){
@@ -68,9 +97,12 @@ $app->match('/catalog', function() use($app) {
 
     return $app['twig']->render('frontend/catalog.html.twig', array(
         "primary_key" => $primary_key,
-        "categories" => $categories,
-        "products" => $products,
-        "providers" => $providers
+        "categories"  => $categories,
+        "products"    => $products,
+        "providers"   => $providers,
+        "pages"       => $pages,
+        "numPage"     => $numPage,
+        "lastPage"    => $lastPage
     ));
 
 })
