@@ -59,11 +59,34 @@
                                                 <a href="{{ path('categories_list') }}">
                                                     <h1>{{ numCat }}</h1>
                                                 </a><hr>
-                                                <a class="btn btn-success" href="{{ path('categories_create') }}">Nuevo categoría</a>
+                                                <a class="btn btn-success" href="{{ path('categories_create') }}">Nueva categoría</a>
                                             </div>
                                         </div>
                                     </div>
-
+                                    {% if is_granted('ROLE_Programador') %}
+                                        <div class="col-sm-3">
+                                            <div class="light-well">
+                                                <h4>Imágenes</h4>
+                                                <div class="data">
+                                                    <a href="{{ path('imagen_list') }}">
+                                                        <h1>{{ numImag }}</h1>
+                                                    </a><hr>
+                                                    <a class="btn btn-success" href="{{ path('imagen_create') }}">Nueva imagen</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="light-well">
+                                                <h4>Usuarios</h4>
+                                                <div class="data">
+                                                    <a href="{{ path('users_list') }}">
+                                                        <h1>{{ numUsers }}</h1>
+                                                    </a><hr>
+                                                    <a class="btn btn-success" href="{{ path('users_create') }}">Nuevo usuario</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
                                 </div>
 
                             </div>

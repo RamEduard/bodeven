@@ -15,16 +15,24 @@ $app->match('/admin', function () use ($app) {
     $find_sql   = "SELECT id FROM `categories`";
     $numCat = $app['db']->fetchAll($find_sql, array());
 
+    $find_sql   = "SELECT id FROM `imagen`";
+    $numImag = $app['db']->fetchAll($find_sql, array());
+
     $find_sql = "SELECT id FROM `products`";
     $numProd = $app['db']->fetchAll($find_sql, array());
 
     $find_sql = "SELECT id FROM `providers`";
     $numProv = $app['db']->fetchAll($find_sql, array());
 
+    $find_sql = "SELECT id FROM `users`";
+    $numUsers = $app['db']->fetchAll($find_sql, array());
+
     return $app['twig']->render('ag_dashboard.html.twig', array(
         "numCat"  => count($numCat),
         "numProd" => count($numProd),
-        "numProv" => count($numProv)
+        "numProv" => count($numProv),
+        "numUsers" => count($numUsers),
+        "numImag" => count($numImag),
     ));
 
 })
