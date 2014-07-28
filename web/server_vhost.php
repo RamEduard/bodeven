@@ -2,7 +2,8 @@
 # Autocargador del framework
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use Silex\Application;
+use Silex\Application,
+    Symfony\Component\Security\Core\Encoder\MessageDigestPasswordEncoder;
 
 # Objeto de la aplicacion Silex
 $app = new Application();
@@ -52,7 +53,10 @@ $app->register(new Silex\Provider\SecurityServiceProvider(), array(
         array('^/admin/usuario', array('ROLE_Programador', 'ROLE_Administrador')),
         array('^/admin', array('ROLE_Programador', 'ROLE_Administrador')),
         array('^/admin', 'ROLE_Usuario')
-    )
+    ),
+    'security.encoder.digest' => $app->share(function($app) {
+        return new MessageDigestPasswordEncoder('sha512');
+    })
 ));
 # Proveedor de doctrine para base de datos
 $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
@@ -67,6 +71,10 @@ $app->register(new Silex\Provider\DoctrineServiceProvider(), array(
         ),
     )
 ));
+#Provedor de swiftmailer
+$app->register(new Silex\Provider\SwiftmailerServiceProvider());
+#Proveedor de carrito de compras
+$app->register(new Bodeven\SilexProvider\CartServiceProvider());
 
 $filename = __DIR__.preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 if (php_sapi_name() === 'cli-server' && is_file($filename)) {
@@ -78,6 +86,7 @@ $app['upload_path'] = "http://$_SERVER[SERVER_NAME]:$_SERVER[SERVER_PORT]/resour
 $app['upload_dir'] = __DIR__ . "/resources/uploads/";
 $app['debug'] = true;
 
+require_once __DIR__ . '/routes/errors/base.php';
 require_once __DIR__ . '/routes/backend/base.php';
 require_once __DIR__ . '/routes/frontend/base.php';
 

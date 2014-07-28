@@ -31,6 +31,24 @@
 
 {% endblock %}
 
+{% block head_javascripts %}
+    <script>
+        paceOptions = {
+            ajax: true, // disabled
+            document: true, // disabled
+            eventLag: true, // disabled
+            // Disable the 'elements' source
+            elements: true,
+
+            // Only show the progress on regular and ajax-y page navigation,
+            // not every request
+            restartOnRequestAfter: true
+        }
+    </script>
+    <!-- Pace 0.5.3 -->
+    <script src="{{ app.asset_path }}/js/plugins/pace/pace.min.js"></script>
+{% endblock %}
+
 {% block body_params %}class="skin-blue"{% endblock %}
 
 {% block header %}
