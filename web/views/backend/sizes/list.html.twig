@@ -2,6 +2,7 @@
 
 {% block body_params %}class="skin-blue"{% endblock %}
 
+
 {% block javascripts %}
 
     {{ parent() }}
@@ -9,7 +10,7 @@
     <!-- page script -->
     <script type="text/javascript">
         $(function() {
-            $("#products_list").dataTable();
+            $("#sizes_list").dataTable();
         });
 
         function confirm_delete(){
@@ -17,6 +18,7 @@
                 return false;
             }
         }
+
     </script>
 {% endblock %}
 
@@ -24,14 +26,14 @@
 
     <div class="wrapper row-offcanvas row-offcanvas-left">
 
-        {% include 'menu.html.twig' with {'option': 'products_list'} %}
+        {% include 'menu.html.twig' with {'option': 'sizes_list'} %}
 
         <!-- Right side column. Contains the navbar and content of the page -->
         <aside class="right-side">                
             <!-- Content Header (Page header) -->
             <section class="content-header">
                 <h1>
-                    Productos
+                    Tallas del producto
                 </h1>
             </section>
 
@@ -49,31 +51,27 @@
                             </div><!-- /.box-header -->
 
                             <div class="box-body table-responsive">
-                                <a class="btn btn-primary" href="{{ path('products_create') }}">Crear nuevo producto</a><br /><br />
-                                <table id="products_list" class="table table-bordered table-striped">
+                                <a class="btn btn-primary" href="{{ path('sizes_create', { productId: productId }) }}">Agregar nueva talla</a>
+                                <button class="btn btn-default" onclick="location.href='{{ path('products_list') }}'">Volver</button>
+                                <br /><br />
+                                <table id="sizes_list" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Imagen</th>
-                                            <th>Nombre</th>
-                                            <th>Categoría</th>
-                                            <th>Proveedor</th>
-                                            <th>Precio</th>
+                                            {% for table_column in table_columns %}
+                                            <th>{{ table_column }}</th>
+                                            {% endfor %}
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {% for row in rows %}
                                             <tr>
-                                                <td><img src="{{ row.image }}" class="img-responsive" style="width: 50px"></td>
-                                                <td>{{ row.name }}</td>
-                                                <td>{{ row.category }}</td>
-                                                <td>{{ row.provider }}</td>
-                                                <td>{{ row.price }}</td>
+                                                {% for table_column in table_columns %}
+                                                    <td>{{ row[table_column] }}</td>
+                                                {% endfor %}
                                                 <td>
-                                                    <a href="{{ path('colors_list', { productId: row[primary_key] }) }}" class="btn btn-success btn-xs">Colores</a>
-                                                    <a href="{{ path('sizes_list', { productId: row[primary_key] }) }}" class="btn btn-info btn-xs">Tallas</a>
-                                                    <a href="{{ path('products_edit', { id: row[primary_key] }) }}" class="btn btn-primary btn-xs">Editar</a>
-                                                    <a href="{{ path('products_delete', { id: row[primary_key] }) }}" onclick='return confirm_delete();' class="btn btn-danger btn-xs">Eliminar</a>
+                                                    <a href="{{ path('colors_edit', { productId: productId, id: row[primary_key] }) }}" class="btn btn-primary btn-xs">Editar</a>
+                                                    <a href="{{ path('colors_delete', { productId: productId, id: row[primary_key] }) }}" onclick='return confirm_delete();' class="btn btn-danger btn-xs">Eliminar</a></td>
                                                 </td>
                                             </tr>
                                         {% endfor %}                                        
@@ -81,11 +79,9 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <th>Imagen</th>
-                                            <th>Nombre</th>
-                                            <th>Categoría</th>
-                                            <th>Proveedor</th>
-                                            <th>Precio</th>
+                                            {% for table_column in table_columns %}
+                                            <th>{{ table_column }}</th>
+                                            {% endfor %}
                                             <th>Acciones</th>
                                         </tr>
                                     </tfoot>
@@ -97,6 +93,6 @@
 
             </section><!-- /.content -->
         </aside><!-- /.right-side -->
-    </div><!-- ./wrapper -->    
+    </div><!-- ./wrapper -->
 
 {% endblock %}

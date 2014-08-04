@@ -47,7 +47,6 @@ $app->match('/catalog', function() use($app) {
         'provider',
         'name',
         'price',
-        'sizes',
         'image',
     );
 

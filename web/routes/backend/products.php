@@ -63,7 +63,6 @@ $app->match('/admin/products/create', function () use ($app) {
 		'category_id' => '', 
 		'name'        => '',
 		'price'       => '',
-        'sizes'       => '',
 		'image'       => '',
     );
 
@@ -79,8 +78,7 @@ $app->match('/admin/products/create', function () use ($app) {
     ));
 	$form = $form->add('name', 'text', array('required' => true));
 	$form = $form->add('price', 'text', array('required' => true));
-    $form = $form->add('sizes', 'text', array('required' => true));
-	$form = $form->add('image', 'hidden', array('required' => false));
+	$form = $form->add('image', 'hidden', array('required' => true));
 
     $form = $form->getForm();
 
@@ -91,8 +89,8 @@ $app->match('/admin/products/create', function () use ($app) {
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "INSERT INTO `products` (`provider_id`, `category_id`, `name`, `price`, `sizes`, `image`, `created`, `updated`) VALUES (?, ?, ?, ?, ?, ?, NOW(), NOW())";
-            $app['db']->executeUpdate($update_query, array($data['provider_id'], $data['category_id'], $data['name'], $data['price'], $data['sizes'], $data['image']));
+            $update_query = "INSERT INTO `products` (`provider_id`, `category_id`, `name`, `price`, `image`, `created`) VALUES (?, ?, ?, ?, ?, NOW())";
+            $app['db']->executeUpdate($update_query, array($data['provider_id'], $data['category_id'], $data['name'], $data['price'], $data['image']));
 
 
             $app['session']->getFlashBag()->add(
@@ -153,7 +151,6 @@ $app->match('/admin/products/edit/{id}', function ($id) use ($app) {
 		'category_id' => $row_sql['category_id'], 
 		'name' => $row_sql['name'], 
 		'price' => $row_sql['price'],
-        'sizes' => $row_sql['sizes'],
         'image' => $row_sql['image'],
     );
 
@@ -171,7 +168,6 @@ $app->match('/admin/products/edit/{id}', function ($id) use ($app) {
     ));
 	$form = $form->add('name', 'text', array('required' => true));
 	$form = $form->add('price', 'text', array('required' => true));
-    $form = $form->add('sizes', 'text', array('required' => true));
 	$form = $form->add('image', 'hidden', array('required' => false));
 
     $form = $form->getForm();
@@ -183,8 +179,8 @@ $app->match('/admin/products/edit/{id}', function ($id) use ($app) {
         if ($form->isValid()) {
             $data = $form->getData();
 
-            $update_query = "UPDATE `products` SET `provider_id` = ?, `category_id` = ?, `name` = ?, `price` = ?, `sizes` = ?, `image` = ?, `created` = ?, `updated` = ? WHERE `id` = ?";
-            $app['db']->executeUpdate($update_query, array($data['provider_id'], $data['category_id'], $data['name'], $data['price'], $data['sizes'], $data['image'], $data['created'], $data['updated'], $id));
+            $update_query = "UPDATE `products` SET `provider_id` = ?, `category_id` = ?, `name` = ?, `price` = ?, `image` = ?, `created` = ?, `updated` = ? WHERE `id` = ?";
+            $app['db']->executeUpdate($update_query, array($data['provider_id'], $data['category_id'], $data['name'], $data['price'], $data['image'], $data['created'], $data['updated'], $id));
 
 
             $app['session']->getFlashBag()->add(
