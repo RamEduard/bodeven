@@ -77,8 +77,14 @@ $app->register(new Silex\Provider\SwiftmailerServiceProvider());
 #Proveedor de carrito de compras
 $app->register(new Bodeven\SilexProvider\CartServiceProvider());
 
-$app['asset_path'] = 'http://localhost/bodeven2/web/resources';
-$app['upload_path'] = 'http://localhost/bodeven2/web/resources/uploads';
+if ($_SERVER['SERVER_NAME'] == "bodeven.com.ve") {
+    $app['asset_path'] = 'http://bodeven.com.ve/web/resources';
+    $app['upload_path'] = 'http://bodeven.com.ve/web/resources/uploads';
+} else {
+    $app['asset_path'] = 'http://localhost/bodeven/web/resources';
+    $app['upload_path'] = 'http://localhost/bodeven/web/resources/uploads';
+}
+
 $app['upload_dir'] = __DIR__ . "/resources/uploads/";
 $app['debug'] = true;
 
