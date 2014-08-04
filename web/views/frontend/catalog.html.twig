@@ -5,10 +5,11 @@
 
 {% block extra_stylesheet %}
     <style>
+        ul{list-style: none}
         a.list-group-item {text-decoration: none;color: #555;}a.list-group-item:hover, a.list-group-item:focus {background-color: #f5f5f5;}.list-group-item:first-child {border-top-left-radius: 4px;border-top-right-radius: 4px;}.list-group-item:last-child {border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;}.list-group-item {position: relative;display: block;padding: 10px 15px;margin-bottom: -1px;background-color: #fff;border: 1px solid #ddd;}.ratings {color: #d17581;padding-left: 10px;padding-right: 10px;}
     </style>
     <style type="text/css">
-        .thumbnail{height:26em; margin-bottom: 10px; cursor: pointer}.thumbnail:hover, .thumbnail:focus{border-color: #006dcc; text-decoration: none}
+        .thumbnail{height:27em; margin-bottom: 10px; cursor: pointer}.thumbnail:hover, .thumbnail:focus{border-color: #006dcc; text-decoration: none}
     </style>
 {% endblock %}
 
@@ -17,40 +18,42 @@
     {% include 'ag_alerts.html.twig' %}
     <div class="row">
         <div class="col-12 col-md-3 col-lg-3">
-            <p class="lead">Productos</p>
-            <div class="list-group">
-                <div class="input-group">
-                    <input type="search"
-                           id="search"
-                           class="list-group-item form-control"
-                           ng-model="q"
-                           placeholder="Buscar..."
-                           title="Ingrese la categoría, proveedor o producto.">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i>
-                                </button>
-                            </span>
-                </div>
-            </div>
+            {#<p class="lead">Productos</p>#}
+            {#<div class="list-group">#}
+                {#<div class="input-group">#}
+                    {#<input type="search"#}
+                           {#id="search"#}
+                           {#class="list-group-item form-control"#}
+                           {#ng-model="q"#}
+                           {#placeholder="Buscar..."#}
+                           {#title="Ingrese la categoría, proveedor o producto.">#}
+                            {#<span class="input-group-btn">#}
+                                {#<button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i>#}
+                                {#</button>#}
+                            {#</span>#}
+                {#</div>#}
+            {#</div>#}
+            <ul class="list-group">
+                    <li>
+                        <a class="list-group-item {% if category_id == null and provider_id == null  %}active{% endif %}" href="{{ path('catalog') }}">Todos</a>
+                    </li>
+            </ul>
             <p class="lead">Categorías</p>
-            <div class="list-group">
-                <select class="form-control" title="Seleccionar categoría">
-                    <option value="" selected>Seleccione</option>
-                    {% for category in categories %}
-                        <option value="{{category.id}}">{{category.name}}</option>
-                    {% endfor %}
-                </select>
-            </div>
+            <ul class="list-group">
+                {% for category in categories %}
+                    <li>
+                        <a class="list-group-item {% if category_id != null and category.id == category_id  %}active{% endif %}" href="{{ path('catalog', {category: category.id})}}">{{category.name}}</a>
+                    </li>
+                {% endfor %}
+            </ul>
             <p class="lead">Proveedores</p>
-            <div class="list-group">
-            	<ul>
-            		{% for provider in providers %}
-                    	<li>
-                    		<a href="{{provider.id}}">{{provider.name}}</a>
-                    	</li>
-                	{% endfor %}
-            	</ul>
-            </div>
+            <ul class="list-group">
+                {% for provider in providers %}
+                    <li>
+                        <a class="list-group-item {% if provider_id != null and provider.id == provider_id  %}active{% endif %}" href="{{ path('catalog', {provider: provider.id})}}">{{provider.name}}</a>
+                    </li>
+                {% endfor %}
+            </ul>
         </div>
         <p></p>
         <div class="col-12 col-md-9 col-lg-9">
@@ -83,6 +86,13 @@
                 </div>
             </div>-->
             <div class="row">
+                {% if products == null %}
+                    <div class="box box-info">
+                        <div class="box-header">
+                            <h2 class="box-title">No hay productos.</h2>
+                        </div>
+                    </div>
+                {% endif %}
                 {% for product in products %}
                     <div class="col-12 col-sm-4 col-md-4 col-lg-4">
                         <a class="thumbnail" href="{{ path('catalog_item', { id: product.id }) }}">
@@ -90,6 +100,7 @@
                             <div class="caption">
                                 <h4 class="pull-right">BsF. {{product.price}}</h4>
                                 <h4>{{product.name}}</h4>
+                                <p><b>Tallas: </b>{{product.sizes}}</p>
                                 <p><b>Categoría: </b>{{product.category}}</p>
                                 <p><b>Proveedor: </b>{{product.provider}}</p>
                             </div>
@@ -106,21 +117,44 @@
                         </a>
                     </div>
                 {% endfor %}
+                <div class="row">&nbsp;</div>
                 <div style="text-align: center">
                     <ul class="pagination pagination-lg">
                         {% if numPage != 1 %}
                             <li>
-                                <a href="{{ path('catalog', {page: (numPage - 1)}) }}">&laquo;</a>
+                                {% if category_id != null %}
+                                    <a href="{{ path('catalog', {category: category_id, page: (numPage - 1)}) }}">&laquo;</a>
+                                {% elseif provider_id != null %}
+                                    <a href="{{ path('catalog', {provider: provider_id, page: (numPage - 1)}) }}">&laquo;</a>
+                                {% else %}
+                                    <a href="{{ path('catalog', {page: (numPage - 1)}) }}">&laquo;</a>
+                                {% endif %}
                             </li>
                         {% endif %}
                         {% for page in pages %}
-                            <li {% if numPage == page %}class="active"{% endif %}>
-                                <a href="{{ path('catalog', {page: page}) }}">{{ page }}</a>
-                            </li>
+                            {% if category_id != null %}
+                                <li {% if numPage == page %}class="active"{% endif %}>
+                                    <a href="{{ path('catalog', {category: category_id, page: page}) }}">{{ page }}</a>
+                                </li>
+                            {% elseif provider_id != null %}
+                                <li {% if numPage == page %}class="active"{% endif %}>
+                                    <a href="{{ path('catalog', {provider: provider_id, page: page}) }}">{{ page }}</a>
+                                </li>
+                            {% else %}
+                                <li {% if numPage == page %}class="active"{% endif %}>
+                                    <a href="{{ path('catalog', {page: page}) }}">{{ page }}</a>
+                                </li>
+                            {% endif %}
                         {% endfor %}
                         {% if numPage != lastPage and numPage < lastPage %}
                             <li>
-                                <a href="{{ path('catalog', {page: (numPage + 1)}) }}">&raquo;</a>
+                                {% if category_id != null %}
+                                    <a href="{{ path('catalog', {category: category_id, page: (numPage + 1)}) }}">&raquo;</a>
+                                {% elseif provider_id != null %}
+                                    <a href="{{ path('catalog', {provider: provider_id, page: (numPage + 1)}) }}">&raquo;</a>
+                                {% else %}
+                                    <a href="{{ path('catalog', {page: (numPage + 1)}) }}">&raquo;</a>
+                                {% endif %}
                             </li>
                         {% endif %}
                     </ul>

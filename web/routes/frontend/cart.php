@@ -78,7 +78,33 @@ $app->match('/pedido', function() use($app) {
             $message2 .= "<p><b>Correo electrónico:</b> $data[correo]</p>";
             $message2 .= '</div>';
 
-            return new \Symfony\Component\HttpFoundation\Response($message . $message2);
+//            $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
+//                ->setUsername("ramon.calle.88@gmail.com")
+//                ->setPassword("ramoncito.1");
+            $transport = Swift_SmtpTransport::newInstance('mx1.hostinger.es', 2525)
+                ->setUsername("info@bodeven.com.ve")
+                ->setPassword("bodeven1#");
+
+            $mailer = Swift_Mailer::newInstance($transport);
+            $mailMessage = Swift_Message::newInstance($subject)
+                ->setFrom(array($data['correo'] => $data['nombres'] . " " . $data['apellidos']))
+                ->setTo('tania_1019@hotmail.com')
+                ->setBody($message, 'text/html');
+            $result = $mailer->send($mailMessage);
+
+            $mailMessage2 = Swift_Message::newInstance($subject2)
+                ->setFrom(array('info@bodeven.com.ve' => 'Uniformes Escolares Bodeven'))
+                ->setTo($data['correo'])
+                ->setBody($message2, 'text/html');
+            $result2 = $mailer->send($mailMessage2);
+
+            if ($result && $result2) {
+                $app['cart'] = new \Bodeven\Cart\Cart();
+                return $app->redirect($app['url_generator']->generate('cart'));
+            } else {
+                return new \Symfony\Component\HttpFoundation\Response('<h1>Fallo al enviar alguno de los mensajes.</h1>' . $message . $message2, 500);
+            }
+
         }
 
     }

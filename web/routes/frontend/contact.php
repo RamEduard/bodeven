@@ -19,7 +19,24 @@ $app->match('/contact', function() use($app) {
         $message .= "<div style=\"background-color: #F0F7FD;margin: 0px 0px 20px;padding: 15px 30px 15px 15px;border-left: 5px solid #D0E3F0;\">$mensaje</div>";
         $message .= '</div>';
 
-        return new \Symfony\Component\HttpFoundation\Response($message);
+//        $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
+//            ->setUsername("ramon.calle.88@gmail.com")
+//            ->setPassword("ramoncito.1");
+        $transport = Swift_SmtpTransport::newInstance('mx1.hostinger.es', 2525)
+            ->setUsername("info@bodeven.com.ve")
+            ->setPassword("bodeven1#");
+
+        $mailer = Swift_Mailer::newInstance($transport);
+        $mailMessage = Swift_Message::newInstance($asunto)
+            ->setFrom(array($correo => $nombre))
+            ->setTo('tania_1019@hotmail.com')
+            ->setBody($message, 'text/html');
+        $result = $mailer->send($mailMessage);
+        if ($result) {
+            return $app->redirect($app['url_generator']->generate('contact'));
+        } else {
+            return new \Symfony\Component\HttpFoundation\Response('<h1>Fallo al enviar mensaje.</h1>' . $message, 500);
+        }
     }
 
     return $app['twig']->render('frontend/contact.html.twig', array());

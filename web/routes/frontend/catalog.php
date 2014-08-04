@@ -47,17 +47,34 @@ $app->match('/catalog', function() use($app) {
         'provider',
         'name',
         'price',
+        'sizes',
         'image',
     );
 
     $primary_key = "id";
     $products = array();
 
-    $find_sql = "SELECT * FROM `products`";
+    $category_id = $app['request']->get('category');
+    $provider_id = $app['request']->get('provider');
+
+    if ($category_id) {
+        $find_sql = "SELECT * FROM `products` WHERE category_id = $category_id";
+    } elseif ($provider_id) {
+        $find_sql = "SELECT * FROM `products` WHERE provider_id = $provider_id";
+    } else {
+        $find_sql = "SELECT * FROM `products`";
+    }
+
     $rows_sql = $app['db']->fetchAll($find_sql, array());
+
+    /**
+     * Paginacion
+     */
 
     $numProd = count($rows_sql);
     $pages = array();
+
+    $lastPage = null;
 
     if ($numProd > 9) {
         $numPages = (int) ($numProd/9);
@@ -79,12 +96,22 @@ $app->match('/catalog', function() use($app) {
     if ($numPage) {
         $numPageActual = ($numPage - 1) * 9;
     } else {
+        $numPage = 1;
         $numPageActual = 0;
     }
+
+    /**
+     * Fin de paginacion
+     */
 
     $find_sql = "SELECT `products`.*, categories.name as category, providers.name as provider FROM `products` ";
     $find_sql .= "INNER JOIN categories ON category_id = categories.id ";
     $find_sql .= "INNER JOIN providers ON provider_id = providers.id ";
+    if ($category_id) {
+        $find_sql .= " WHERE category_id = $category_id ";
+    } elseif ($provider_id) {
+        $find_sql .= " WHERE provider_id = $provider_id ";
+    }
     $find_sql .= "ORDER BY `products`.`created` DESC ";
     $find_sql .= "LIMIT $numPageActual, 9";
     $rows_sql = $app['db']->fetchAll($find_sql, array());
@@ -102,7 +129,9 @@ $app->match('/catalog', function() use($app) {
         "providers"   => $providers,
         "pages"       => $pages,
         "numPage"     => $numPage,
-        "lastPage"    => $lastPage
+        "lastPage"    => $lastPage,
+        "category_id" => $category_id,
+        "provider_id" => $provider_id
     ));
 
 })

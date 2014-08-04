@@ -30,6 +30,11 @@
                     <i class="glyphicon glyphicon-shopping-cart"></i> Pedido
                 </a>
             </li>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') and product is defined %}
+            	<li class="dropdown">
+            		<a href="{{ path('products_edit', {id: product.id}) }}">Editar producto</a>
+            	</li>
+            {% endif %}
             {#<li class="dropdown">#}
                 {#<a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-user"></i> Username <i class="caret"></i>#}
 
