@@ -40,9 +40,9 @@ class Product {
     var $image;
 
     /**
-     * @var string $sizes
+     * @var string $size
      */
-    var $sizes;
+    var $size;
 
     /**
      * @var int $count
@@ -58,15 +58,15 @@ class Product {
      * @param int $id
      * @param \Silex\Application $app
      * @param string $color
+     * @param string $size
      * @param int $count
      * @param int $providerId
      * @param int $categoryId
      * @param string $name
      * @param float $price
      * @param string $image
-     * @param string $sizes
      */
-    public function __construct($id = 0, \Silex\Application $app = null, $color = "", $count = 1, $providerId = 0, $categoryId = 0, $name = "", $price = 0.00, $image = "", $sizes = "") {
+    public function __construct($id = 0, \Silex\Application $app = null, $color = "", $size = "", $count = 1, $providerId = 0, $categoryId = 0, $name = "", $price = 0.00, $image = "") {
         $args = func_get_args();
 
         if (count($args) == 8 && is_object($app)) {
@@ -76,8 +76,8 @@ class Product {
             $this->name       = $name;
             $this->price      = $price;
             $this->image      = $image;
-            $this->sizes      = $sizes;
-        } elseif ((count($args) == 2 || count($args) == 3 || count($args) == 4) && is_object($app)) {
+            $this->size      = $size;
+        } elseif ((count($args) == 2 || count($args) == 3 || count($args) == 4 || count($args) == 5) && is_object($app)) {
             $find_sql = "SELECT * FROM `products` WHERE `id` = ?";
             $product_sql = $app['db']->fetchAssoc($find_sql, array($args[0]));
             if (is_array($product_sql)) {
@@ -87,12 +87,12 @@ class Product {
                 $this->name       = $product_sql['name'];
                 $this->price      = $product_sql['price'];
                 $this->image      = $product_sql['image'];
-                $this->sizes      = $product_sql['sizes'];
             }
         }
 
-        $this->count = $count;
         $this->color = $color;
+        $this->count = $count;
+        $this->size = $size;
     }
 
 } 

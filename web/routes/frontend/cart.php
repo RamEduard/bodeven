@@ -10,6 +10,7 @@ $app->match('/addToCart', function() use($app) {
     $productId = (int) $app['request']->get('product_id');
     $count     = $app['request']->get('count');
     $color     = $app['request']->get('color');
+    $size     = $app['request']->get('size');
 
     $product = new Bodeven\Cart\Product($productId, $app, $color, $count);
 
