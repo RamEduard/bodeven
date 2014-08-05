@@ -157,6 +157,10 @@ $app->match('/catalog/{id}', function($id) use($app) {
     $find_sql = "SELECT * FROM `colors` WHERE product_id = ?";
     $colors_sql = $app['db']->fetchAll($find_sql, array($id));
 
+    $sizes = array();
+    $find_sql = "SELECT * FROM `sizes` WHERE product_id = ?";
+    $sizes_sql = $app['db']->fetchAll($find_sql, array($id));
+
     foreach ($colors_sql as $row_key => $row_sql) {
         for ($i = 0; $i < count($colors_columns); $i++) {
             $colors[$row_key][$colors_columns[$i]] = $row_sql[$colors_columns[$i]];
@@ -164,6 +168,7 @@ $app->match('/catalog/{id}', function($id) use($app) {
     }
 
     $product_sql['colors'] = $colors;
+    $product_sql['sizes'] = $sizes_sql;
 
     $product_columns = array(
         'id',
