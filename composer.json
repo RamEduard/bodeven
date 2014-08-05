@@ -1,9 +1,19 @@
 {
+    "name": "rameduard/bodeven",
+    "type": "library",
+    "description": "Simple PHP-MVC",
+    "license": "GPL",
+    "keywords": ["cart", "upload images"],
+    "authors": [
+        {
+            "name": "Ramón Serrano",
+            "email": "ramon.calle.88@gmail.com"
+        }
+    ],
     "require": {
         "php": ">=5.3.3",
         "silex/silex": "1.2.*",
         "monolog/monolog": "~1.4,>=1.4.1",
-        "bodeven/bodeven": "1.2.*",
         "doctrine/dbal": "~2.2",
         "symfony/console": ">=2.3",
         "twig/twig": ">=1.8.0,<2.0-dev",
