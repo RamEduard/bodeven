@@ -38,7 +38,7 @@ $app->match('/admin/sizes/{productId}/create', function ($productId) use ($app) 
     
     $initial_data = array(
         'product_id' => $productId,
-		'size' => '', 
+		'size' => null,
     );
 
     $form = $app['form.factory']->createBuilder('form', $initial_data);
@@ -46,7 +46,7 @@ $app->match('/admin/sizes/{productId}/create', function ($productId) use ($app) 
 
 
 	$form = $form->add('product_id', 'hidden', array('required' => true));
-	$form = $form->add('size', 'text', array('required' => true));
+	$form = $form->add('size', 'number', array('required' => true));
 
     $form = $form->getForm();
 
@@ -106,7 +106,7 @@ $app->match('/admin/sizes/{productId}/edit/{id}', function ($productId, $id) use
     $form = $app['form.factory']->createBuilder('form', $initial_data);
 
 
-	$form = $form->add('size', 'text', array('required' => true));
+	$form = $form->add('size', 'number', array('required' => true));
 
     $form = $form->getForm();
 
