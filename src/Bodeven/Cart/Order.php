@@ -53,6 +53,8 @@ class Order {
                                 <th>#</th>
                                 <th>Imagen</th>
                                 <th>Nombre</th>
+                                <th>Color</th>
+                                <th>Talla</th>
                                 <th>Cant.</th>
                                 <th>Monto</th>
                             </tr>
@@ -67,6 +69,10 @@ class Order {
                                 <img src=\"$product->image\" class=\"img-responsive\" style=\"width: 50px\">
                             </td>";
             $table_html .= "<td style=\"$styles[td]\">$product->name</td>";
+            $table_html .= "<td style=\"$styles[td]\">
+                                <div style=\"background-color:$product->color;width:3em;height:1.5em;border:1px solid #eee;display:inline-block;margin-right:1em;margin-left: 1.3em;\"></div>
+                            </td>";
+            $table_html .= "<td style=\"$styles[td]\">$product->size</td>";
             $table_html .= "<td style=\"$styles[td] width:30px\">{$product->count}x{$product->price}</td>";
             $table_html .= "<td style=\"$styles[td] width:0px\">" . ($product->count * $product->price) . "</td>";
             $table_html .= '</tr>';
@@ -76,7 +82,7 @@ class Order {
 
         $table_html .= '<tfoot>';
         $table_html .= "<tr>
-                            <th colspan=\"3\"></th>
+                            <th colspan=\"5\"></th>
                             <th>Total</th>
                             <th>{$this->cart->getTotalMount()}</th>
                             <th></th>

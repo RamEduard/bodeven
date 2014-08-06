@@ -12,7 +12,7 @@ $app->match('/addToCart', function() use($app) {
     $color     = $app['request']->get('color');
     $size     = $app['request']->get('size');
 
-    $product = new Bodeven\Cart\Product($productId, $app, $color, $count);
+    $product = new Bodeven\Cart\Product($productId, $app, $color, $size, $count);
 
     $app['cart']->addProduct($product);
 
@@ -25,6 +25,10 @@ $app->match('/addToCart', function() use($app) {
 $app->match('/pedido', function() use($app) {
 
     $products = $app['cart']->getProducts();
+
+//    print "<pre>";
+//    print_r($products);
+//    print "</pre>";
 
     $total_mount = $app['cart']->getTotalMount();
 
@@ -123,9 +127,10 @@ $app->match('/pedido', function() use($app) {
 $app->match('/product_plus', function() use($app){
 
     $productId = $app['request']->get('product_id');
-    $color      = $app['request']->get('color');
+    $color     = $app['request']->get('color');
+    $size      = $app['request']->get('size');
 
-    $product = new Bodeven\Cart\Product($productId, $app, $color);
+    $product = new Bodeven\Cart\Product($productId, $app, $color, $size);
 
     $app['cart']->addProduct($product);
 
@@ -138,8 +143,10 @@ $app->match('/product_plus', function() use($app){
 $app->match('/product_minus', function() use($app){
 
     $productId = $app['request']->get('product_id');
+    $color     = $app['request']->get('color');
+    $size      = $app['request']->get('size');
 
-    $app['cart']->removeProduct($productId);
+    $app['cart']->removeProduct($productId, $color, $size);
 
     return $app->redirect($app['url_generator']->generate('cart'));
 
@@ -147,13 +154,17 @@ $app->match('/product_minus', function() use($app){
 ->method('POST')
 ->bind('product_minus');
 
-$app->match('/product_remove/{productId}', function ($productId) use ($app) {
+$app->match('/product_remove', function () use ($app) {
 
-    $product = $app['cart']->getProduct($productId);
+    $productId = $app['request']->get('product_id');
+    $color     = $app['request']->get('color');
+    $size      = $app['request']->get('size');
+
+    $product = $app['cart']->getProduct($productId, $color, $size);
 
     if (is_object($product)) {
         for ($i = $product->count; $i >= 0; $i--) {
-            $app['cart']->removeProduct($productId);
+            $app['cart']->removeProduct($productId, $color, $size);
         }
     }
 

@@ -34,7 +34,7 @@
                                 {% for size in product.sizes %}
                                     <label for="size-{{ size.id }}" title="{{ size.size }}"
                                            style="width:3em;height:1.5em;border:1px solid #eee;display:inline-block;margin-right:1em;margin-left: 1.3em;">
-                                        <input type="radio" name="size" id="size-{{ size.id }}" value="{{ size.size }}" style="margin-left: -1.3em;margin-top: -1px;">
+                                        <input type="radio" name="size" id="size-{{ size.id }}" value="{{ size.size }}" style="margin-left: -1.3em;margin-top: -1px;"> {{ size.size }}
                                     </label>
                                 {% endfor %}
                             </p>
@@ -108,7 +108,7 @@
                 parseInt(valor);
             }
 
-            if (valor >= 1) {
+            if (valor >= 1 && ($("input[name=color]")[0] != undefined && $("input[name=size]")[0] != undefined)) {
                 orderSubmitEnable();
             }
 
@@ -127,8 +127,7 @@
                 $('#order button[type="submit"]').removeClass('disabled');
             }
         }
-    </script>
-    <script>
+
         $(function() {
 
             $("#order #item").change(function() {
@@ -152,6 +151,10 @@
             if ($("input[name=color]")[0] == undefined || $("input[name=size]")[0] == undefined) {
                 orderSubmitDisable();
             }
+        });
+
+        $('form').submit( function(event) {
+            Pace.restart();
         });
     </script>
 {% endblock %}

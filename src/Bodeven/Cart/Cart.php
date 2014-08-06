@@ -53,7 +53,7 @@ class Cart {
      * @return void
      */
     public function addProduct($product) {
-        $productColection = $this->getProduct($product->id);
+        $productColection = $this->getProduct($product->id, $product->color, $product->size);
         if ($productColection) {
             $productColection->count++;
         } else {
@@ -61,16 +61,18 @@ class Cart {
         }
     }
 
-    /**
+    /***
      * @param int $id
+     * @param $color
+     * @param $size
      * @return bool|Product
      */
-    public function getProduct($id = 0) {
+    public function getProduct($id = 0, $color, $size) {
         $iterator = $this->products->getIterator();
         while ($iterator->valid()) {
             $product = $iterator->current();
 
-            if ($product->id == $id) {
+            if ($product->id == $id && ($product->color == $color && $product->size == $size)) {
                 return $product;
             }
 
@@ -97,15 +99,17 @@ class Cart {
     }
 
     /**
-     * @param \int $id
+     * @param int    $id
+     * @param string $color
+     * @param string $size
      * @return bool
      */
-    public function removeProduct($id = 0) {
+    public function removeProduct($id = 0, $color, $size) {
         $iterator = $this->products->getIterator();
         while ($iterator->valid()) {
             $product = $iterator->current();
 
-            if ($product->id == $id) {
+            if ($product->id == $id && ($product->color == $color && $product->size == $size)) {
                 if ($product->count > 1)
                     $product->count--;
                 else {

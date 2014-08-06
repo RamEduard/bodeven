@@ -38,6 +38,8 @@
                                     <th>#</th>
                                     <th>Imagen</th>
                                     <th>Nombre</th>
+                                    <th>Color</th>
+                                    <th>Talla</th>
                                     <th>Cant.</th>
                                     <th>Monto</th>
                                     <th></th>
@@ -55,6 +57,12 @@
                                     <td>
                                         {{ product.name }}
                                     </td>
+                                    <td>
+                                        <div style="background-color:{{ product.color }};width:3em;height:1.5em;border:1px solid #eee;display:inline-block;margin-right:1em;margin-left: 1.3em;"></div>
+                                    </td>
+                                    <td>
+                                        {{ product.size }}
+                                    </td>
                                     <td style="width: 30px">
                                         {{ product.count }}x{{ product.price }}
                                     </td>
@@ -66,23 +74,29 @@
                                             <form action="{{ path('product_minus') }}" method="post" style="width: 34px; display: inline-block">
                                                 <input type="hidden" name="product_id" value="{{ product.id }}">
                                                 <input type="hidden" name="color" value="{{ product.color }}">
+                                                <input type="hidden" name="size" value="{{ product.size }}">
                                                 <button type="submit" class="btn btn-default" style="width: 34px; display: inline-block">-</button>
                                             </form>
                                         {% endif %}
                                         <form action="{{ path('product_plus') }}" method="post" style="width: 34px; display: inline-block">
                                             <input type="hidden" name="product_id" value="{{ product.id }}">
                                             <input type="hidden" name="color" value="{{ product.color }}">
+                                            <input type="hidden" name="size" value="{{ product.size }}">
                                             <button type="submit" class="btn btn-default" style="width: 34px">+</button>
                                         </form>
-                                        <a href="{{ path('product_remove', { productId: product.id }) }}"
-                                           onclick='return confirm_delete();' class="btn btn-default" style="width: 34px">x</a>
+                                        <form action="{{ path('product_remove') }}" method="post" style="width: 34px; display: inline-block" onsubmit="return confirm_delete();">
+                                            <input type="hidden" name="product_id" value="{{ product.id }}">
+                                            <input type="hidden" name="color" value="{{ product.color }}">
+                                            <input type="hidden" name="size" value="{{ product.size }}">
+                                            <button type="submit" class="btn btn-default" style="width: 34px">x</button>
+                                        </form>
                                     </td>
                                 </tr>
                             {% endfor %}
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <th colspan="3"></th>
+                                    <th colspan="5"></th>
                                     <th>Total</th>
                                     <th>{{ total_mount }}</th>
                                     <th></th>
