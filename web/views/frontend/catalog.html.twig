@@ -119,58 +119,60 @@
                 {% endfor %}
                 <div class="row">&nbsp;</div>
                 <div style="text-align: center">
-                    <ul class="pagination pagination-lg">
-                        {% if numPage != 1 %}
-                            <li>
-                                {% if category_id != null %}
-                                    <a href="{{ path('catalog', {category: category_id, page: (numPage - 1)}) }}">&laquo;</a>
-                                {% elseif provider_id != null %}
-                                    <a href="{{ path('catalog', {provider: provider_id, page: (numPage - 1)}) }}">&laquo;</a>
-                                {% else %}
-                                    <a href="{{ path('catalog', {page: (numPage - 1)}) }}">&laquo;</a>
-                                {% endif %}
-                            </li>
-                        {% endif %}
-                        {% for page in pages %}
-                            {% if category_id != null %}
-                                <li {% if numPage == page %}class="active"{% endif %}>
-                                    <a href="{{ path('catalog', {category: category_id, page: page}) }}">{{ page }}</a>
-                                </li>
-                            {% elseif provider_id != null %}
-                                <li {% if numPage == page %}class="active"{% endif %}>
-                                    <a href="{{ path('catalog', {provider: provider_id, page: page}) }}">{{ page }}</a>
-                                </li>
-                            {% else %}
-                                <li {% if numPage == page %}class="active"{% endif %}>
-                                    <a href="{{ path('catalog', {page: page}) }}">{{ page }}</a>
+                    {% if pages != null %}
+                        <ul class="pagination pagination-lg">
+                            {% if numPage != 1 %}
+                                <li>
+                                    {% if category_id != null %}
+                                        <a href="{{ path('catalog', {category: category_id, page: (numPage - 1)}) }}">&laquo;</a>
+                                    {% elseif provider_id != null %}
+                                        <a href="{{ path('catalog', {provider: provider_id, page: (numPage - 1)}) }}">&laquo;</a>
+                                    {% else %}
+                                        <a href="{{ path('catalog', {page: (numPage - 1)}) }}">&laquo;</a>
+                                    {% endif %}
                                 </li>
                             {% endif %}
-                        {% endfor %}
-                        {% if numPage != lastPage and numPage < lastPage %}
-                            <li>
+                            {% for page in pages %}
                                 {% if category_id != null %}
-                                    <a href="{{ path('catalog', {category: category_id, page: lastPage}) }}">{{ lastPage }}</a>
-                                    <a href="{{ path('catalog', {category: category_id, page: (numPage + 1)}) }}">&raquo;</a>
+                                    <li {% if numPage == page %}class="active"{% endif %}>
+                                        <a href="{{ path('catalog', {category: category_id, page: page}) }}">{{ page }}</a>
+                                    </li>
                                 {% elseif provider_id != null %}
-                                    <a href="{{ path('catalog', {provider: provider_id, page: lastPage}) }}">{{ lastPage }}</a>
-                                    <a href="{{ path('catalog', {provider: provider_id, page: (numPage + 1)}) }}">&raquo;</a>
+                                    <li {% if numPage == page %}class="active"{% endif %}>
+                                        <a href="{{ path('catalog', {provider: provider_id, page: page}) }}">{{ page }}</a>
+                                    </li>
                                 {% else %}
-                                    <a href="{{ path('catalog', {page: lastPage}) }}">{{ lastPage }}</a>
-                                    <a href="{{ path('catalog', {page: (numPage + 1)}) }}">&raquo;</a>
+                                    <li {% if numPage == page %}class="active"{% endif %}>
+                                        <a href="{{ path('catalog', {page: page}) }}">{{ page }}</a>
+                                    </li>
                                 {% endif %}
-                            </li>
-                        {% else %}
-                            <li class="active">
-                                {% if category_id != null %}
-                                    <a href="{{ path('catalog', {category: category_id, page: lastPage}) }}">{{ lastPage }}</a>
-                                {% elseif provider_id != null %}
-                                    <a href="{{ path('catalog', {provider: provider_id, page: lastPage}) }}">{{ lastPage }}</a>
-                                {% else %}
-                                    <a href="{{ path('catalog', {page: lastPage}) }}">{{ lastPage }}</a>
-                                {% endif %}
-                            </li>
-                        {% endif %}
-                    </ul>
+                            {% endfor %}
+                            {% if numPage != lastPage and numPage < lastPage %}
+                                <li>
+                                    {% if category_id != null %}
+                                        <a href="{{ path('catalog', {category: category_id, page: lastPage}) }}">{{ lastPage }}</a>
+                                        <a href="{{ path('catalog', {category: category_id, page: (numPage + 1)}) }}">&raquo;</a>
+                                    {% elseif provider_id != null %}
+                                        <a href="{{ path('catalog', {provider: provider_id, page: lastPage}) }}">{{ lastPage }}</a>
+                                        <a href="{{ path('catalog', {provider: provider_id, page: (numPage + 1)}) }}">&raquo;</a>
+                                    {% else %}
+                                        <a href="{{ path('catalog', {page: lastPage}) }}">{{ lastPage }}</a>
+                                        <a href="{{ path('catalog', {page: (numPage + 1)}) }}">&raquo;</a>
+                                    {% endif %}
+                                </li>
+                            {% else %}
+                                <li class="active">
+                                    {% if category_id != null %}
+                                        <a href="{{ path('catalog', {category: category_id, page: lastPage}) }}">{{ lastPage }}</a>
+                                    {% elseif provider_id != null %}
+                                        <a href="{{ path('catalog', {provider: provider_id, page: lastPage}) }}">{{ lastPage }}</a>
+                                    {% else %}
+                                        <a href="{{ path('catalog', {page: lastPage}) }}">{{ lastPage }}</a>
+                                    {% endif %}
+                                </li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
                 </div>
             </div>
             <div class="row">&nbsp;</div><div class="row">&nbsp;</div>
