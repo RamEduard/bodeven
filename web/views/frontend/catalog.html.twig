@@ -149,11 +149,24 @@
                         {% if numPage != lastPage and numPage < lastPage %}
                             <li>
                                 {% if category_id != null %}
+                                    <a href="{{ path('catalog', {category: category_id, page: lastPage}) }}">{{ lastPage }}</a>
                                     <a href="{{ path('catalog', {category: category_id, page: (numPage + 1)}) }}">&raquo;</a>
                                 {% elseif provider_id != null %}
+                                    <a href="{{ path('catalog', {provider: provider_id, page: lastPage}) }}">{{ lastPage }}</a>
                                     <a href="{{ path('catalog', {provider: provider_id, page: (numPage + 1)}) }}">&raquo;</a>
                                 {% else %}
+                                    <a href="{{ path('catalog', {page: lastPage}) }}">{{ lastPage }}</a>
                                     <a href="{{ path('catalog', {page: (numPage + 1)}) }}">&raquo;</a>
+                                {% endif %}
+                            </li>
+                        {% else %}
+                            <li class="active">
+                                {% if category_id != null %}
+                                    <a href="{{ path('catalog', {category: category_id, page: lastPage}) }}">{{ lastPage }}</a>
+                                {% elseif provider_id != null %}
+                                    <a href="{{ path('catalog', {provider: provider_id, page: lastPage}) }}">{{ lastPage }}</a>
+                                {% else %}
+                                    <a href="{{ path('catalog', {page: lastPage}) }}">{{ lastPage }}</a>
                                 {% endif %}
                             </li>
                         {% endif %}
