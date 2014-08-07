@@ -9,10 +9,17 @@
         a.list-group-item {text-decoration: none;color: #555;}a.list-group-item:hover, a.list-group-item:focus {background-color: #f5f5f5;}.list-group-item:first-child {border-top-left-radius: 4px;border-top-right-radius: 4px;}.list-group-item:last-child {border-bottom-left-radius: 4px;border-bottom-right-radius: 4px;}.list-group-item {position: relative;display: block;padding: 10px 15px;margin-bottom: -1px;background-color: #fff;border: 1px solid #ddd;}.ratings {color: #d17581;padding-left: 10px;padding-right: 10px;}
     </style>
     <style type="text/css">
-        .thumbnail{height:27em; margin-bottom: 10px; cursor: pointer}.thumbnail:hover, .thumbnail:focus{border-color: #006dcc; text-decoration: none}
+        .thumbnail{height:30em; margin-bottom: 10px; cursor: pointer}.thumbnail:hover, .thumbnail:focus{border-color: #006dcc; text-decoration: none}
     </style>
 {% endblock %}
-
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function() {
+            $("span").tooltip();
+        });
+    </script>
+{% endblock %}
 {% block content %}
     <h1 class="page-header">Catálogo</h1>
     {% include 'ag_alerts.html.twig' %}
@@ -100,7 +107,29 @@
                             <div class="caption">
                                 <h4 class="pull-right">BsF. {{product.price}}</h4>
                                 <h4>{{product.name}}</h4>
-                                {#<p><b>Tallas: </b>{{product.sizes}}</p>#}
+                                {% if product.colors != null %}
+                                    <p><b>Colores:</b>
+                                        {% for color in product.colors %}
+                                            <span title="{{ color.name }}"
+                                                   style="background-color:{{ color.color_hex }};width:2em;height:1.5em;border:1px solid gray;display:inline-block;margin-right:0.25em;margin-left: 0.25em;top: 0.4em;position: relative">
+                                            </span>
+                                        {% endfor %}
+                                    </p>
+                                {% else %}
+                                    <p><b class="text-danger">Sin colores</b></p>
+                                {% endif %}
+                                {% if product.sizes != null %}
+                                    <p><b>Tallas:</b>
+                                        {% for size in product.sizes %}
+                                            <span for="size-{{ size.id }}" title="{{ size.size }}"
+                                                   style="width:2em;height:1.5em;border:1px solid #eee;display:inline-block;margin-right:0.25em;margin-left: 0.25em;position: relative">
+                                                {{ size.size }}
+                                            </span>
+                                        {% endfor %}
+                                    </p>
+                                {% else %}
+                                    <p><b class="text-danger">Sin Tallas</b></p>
+                                {% endif %}
                                 <p><b>Categoría: </b>{{product.category}}</p>
                                 <p><b>Proveedor: </b>{{product.provider}}</p>
                             </div>

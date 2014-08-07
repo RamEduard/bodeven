@@ -119,6 +119,11 @@ $app->match('/catalog', function() use($app) {
         for($i = 0; $i < count($product_columns); $i++){
             $products[$row_key][$product_columns[$i]] = $row_sql[$product_columns[$i]];
         }
+        $colors_sql = "SELECT * FROM `colors` WHERE product_id = ?";
+        $products[$row_key]['colors'] = $app['db']->fetchAll($colors_sql, array($row_sql['id']));
+
+        $sizes_sql = "SELECT * FROM `sizes` WHERE product_id = ?";
+        $products[$row_key]['sizes'] = $app['db']->fetchAll($sizes_sql, array($row_sql['id']));
     }
 
     return $app['twig']->render('frontend/catalog.html.twig', array(
@@ -193,6 +198,11 @@ $app->match('/catalog/{id}', function($id) use($app) {
         for($i = 0; $i < count($product_columns); $i++){
             $related_products[$row_key][$product_columns[$i]] = $row_sql[$product_columns[$i]];
         }
+        $colors_sql = "SELECT * FROM `colors` WHERE product_id = ?";
+        $related_products[$row_key]['colors'] = $app['db']->fetchAll($colors_sql, array($row_sql['id']));
+
+        $sizes_sql = "SELECT * FROM `sizes` WHERE product_id = ?";
+        $related_products[$row_key]['sizes'] = $app['db']->fetchAll($sizes_sql, array($row_sql['id']));
     }
 
     return $app['twig']->render('frontend/catalog_item.html.twig', array(
