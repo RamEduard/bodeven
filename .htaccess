@@ -1,6 +1,6 @@
 RewriteBase /
 <IfModule mod_rewrite.c>
-    RewriteEngine On    
+    RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !favicon.ico$
     RewriteRule ^ web/index.php [L]
