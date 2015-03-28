@@ -1,0 +1,96 @@
+{% extends 'ag_base/backend.html.twig' %}
+
+{% block body_params %}class="skin-blue"{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+    <!-- page script -->
+    <script type="text/javascript">
+        $(function() {
+            $("#colors_list").dataTable();
+        });
+
+        function confirm_delete(){
+            if(!confirm("¿Realmente desea eliminar? ¡Esta acción no puede deshacer!")) {
+                return false;
+            }
+        }
+
+    </script>
+{% endblock %}
+
+{% block container %}
+
+    <div class="wrapper row-offcanvas row-offcanvas-left">
+
+        {% include 'menu.html.twig' with {'option': 'colors_list'} %}
+
+        <!-- Right side column. Contains the navbar and content of the page -->
+        <aside class="right-side">                
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Colores del producto
+                </h1>
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        {% include 'ag_alerts.html.twig' %}
+
+                        <div class="box">
+                            <div class="box-header">
+                                
+                            </div><!-- /.box-header -->
+
+                            <div class="box-body table-responsive">
+                                <a class="btn btn-primary" href="{{ path('colors_create', { productId: productId}) }}">Agregar nuevo color</a>
+                                <button class="btn btn-default" onclick="location.href='{{ path('products_list') }}'">Volver</button>
+                                <br /><br />
+                                <table id="colors_list" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Color</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for row in rows %}
+                                            <tr>
+                                                <td>{{ row.name }}</td>
+                                                <td>
+                                                    <div style="background-color: {{ row.color_hex }};width:20px;height: 20px;display: inline-block"></div>
+                                                    {{ row.color_hex }}
+                                                </td>
+                                                <td>
+                                                    <a href="{{ path('colors_edit', { productId: productId, id: row[primary_key] }) }}" class="btn btn-primary btn-xs">Editar</a>
+                                                    <a href="{{ path('colors_delete', { productId: productId, id: row[primary_key] }) }}" onclick='return confirm_delete();' class="btn btn-danger btn-xs">Eliminar</a></td>
+                                            </tr>
+                                        {% endfor %}                                        
+
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Color</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div><!-- /.box-body -->
+                        </div><!-- /.box -->
+                    </div>
+                </div>
+
+            </section><!-- /.content -->
+        </aside><!-- /.right-side -->
+    </div><!-- ./wrapper -->
+
+{% endblock %}

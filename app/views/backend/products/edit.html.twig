@@ -1,0 +1,153 @@
+{% extends 'ag_base/backend.html.twig' %}
+
+{% block body_params %}class="skin-blue"{% endblock %}
+
+{% block container %}
+
+    <div class="wrapper row-offcanvas row-offcanvas-left">
+
+        {% include 'menu.html.twig' with {'option': 'products_edit'} %}
+
+        <!-- Right side column. Contains the navbar and content of the page -->
+        <aside class="right-side">                
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>
+                    Editar Producto <a class="btn btn-default" href="{{ path('catalog_item', {id: id}) }}">Ver producto</a>
+                </h1>
+            </section>
+
+            <!-- Main content -->
+            <section class="content">
+
+                {% include 'ag_alerts.html.twig' %}
+
+                <div class="row">
+                    <div class="col-md-6">
+
+                        {{ form_start(form, {'method': 'POST'}) }}
+                            {{ form_errors(form) }}
+
+                            <div class="box box-info">
+                                <div class="box-header">
+                                    <h3 class="box-title"></h3>
+                                </div><!-- /.box-header -->
+                                <div class="box-body">
+
+                                    <div class='form-group' id="product_image">
+                                        <img src="{{ image_link }}" style="width:200px">
+                                        <button class="btn btn-default"
+                                                id="imageListButton"
+                                                type="button"
+                                                data-toggle="modal"
+                                                data-target="#imagenListModal">
+                                            <i class="fa fa-picture-o"></i>
+                                            Modificar imagen de producto
+                                        </button>
+                                    </div>
+
+                                    <div class='form-group'>
+                                        {{ form_label(form.provider_id, "Proveedor") }}
+                                        {{ form_widget(form.provider_id, { attr: { 'class': 'form-control' }}) }}
+                                    </div>
+
+                                    <div class='form-group'>
+                                        {{ form_label(form.category_id, "Categoría") }}
+                                        {{ form_widget(form.category_id, { attr: { 'class': 'form-control' }}) }}
+                                    </div>
+
+                                    <div class='form-group'>
+                                        {{ form_label(form.name, "Nombre") }}
+                                        {{ form_widget(form.name, { attr: { 'class': 'form-control' }}) }}
+                                    </div>
+
+                                    <div class='form-group'>
+                                        {{ form_label(form.price, "Precio") }}
+                                        {{ form_widget(form.price, { attr: { 'class': 'form-control', 'pattern': '\\d+(\\.\\d{1,2})?', 'title': 'Sólo números. Ejemplo: 12.12' }}) }}
+                                    </div>
+
+                                </div><!-- /.box-body -->
+
+                                {{ form_rest(form) }}
+
+                                <div class="box-footer">
+                                    <button type="submit" class="btn btn-primary">Editar</button>
+                                    <button type="button" class="btn btn-default" onclick="location.href='{{ path("products_list") }}'">Volver</button>
+                                </div>
+
+                            </div><!-- /.box -->
+                        {{ form_end(form) }}
+
+
+                    </div>
+                    <!-- Modal -->
+                    <div class="modal fade" id="imagenListModal" tabindex="-1" role="dialog" aria-labelledby="imagenListModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">Elegir imagen</h4>
+                                </div>
+                                <div class="modal-body">
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="accept_image">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section><!-- /.content -->
+        </aside><!-- /.right-side -->
+    </div><!-- ./wrapper -->
+
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ app.asset_path }}/js/plugins/image-picker/image-picker.css" type="text/css" rel="stylesheet">
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(function() {
+            $("#imageListButton").click(function() {
+                $.ajax({
+                    type: 'GET',
+                    url: '{{ path('imagen_list_json') }}',
+                    beforeSend: function() {
+                        $(".modal-body").html('Cargando...');
+                    },
+                    statusCode: {
+                        404: function() {
+                            $(".modal-body").html('No encontrado. Intente luego.');
+                        }
+                    }
+                })
+                .done(function(data) {
+                    $(".modal-body").html(data);
+                    $("select.image-picker").imagepicker({
+                        hide_select : true,
+                        show_label  : false
+                    });
+                    $("#accept_image").click(function() {
+                        $("#form_image").val($(".selected img").attr("src"));
+                        $("#product_image").html('<img src=" ' + $(".selected img").attr("src") + ' " style="width:200px">' +
+                                '<button class="btn btn-default" '+
+                                'id="imageListButton" '+
+                                'type="button" '+
+                                'data-toggle="modal" '+
+                                'data-target="#imagenListModal"> '+
+                                '<i class="fa fa-picture-o"></i> '+
+                                'Modificar imagen de producto '+
+                                '</button>');
+                        $("#product_image").fadeIn();
+                    });
+                });
+            });
+        });
+    </script>
+    <script src="{{ app.asset_path }}/js/plugins/image-picker/image-picker.js"></script>
+{% endblock %}
